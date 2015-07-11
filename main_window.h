@@ -26,7 +26,7 @@ private:
 			QPushButton* search_button;
 			QPushButton* random_button;
 		QVBoxLayout* Middle_container;
-			QHBoxLayout* left_middle_container;
+			QBoxLayout* left_middle_container;
 				QVBoxLayout* Emotions_container;
 				QVBoxLayout* Organizations_structure_container;
 			QBoxLayout* Middle_center_container;
