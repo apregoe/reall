@@ -17,7 +17,7 @@ public:
 private slots:
 
 private:
-	QHBoxLayout* Outercontainer;
+	QVBoxLayout* Outercontainer;
 		QHBoxLayout* Header;
 			QLabel* image_container;
 				QImage Logo;
@@ -26,13 +26,16 @@ private:
 			QPushButton* search_button;
 			QPushButton* random_button;
 		QVBoxLayout* Middle_container;
-			QBoxLayout* left_middle_container;
+			//This is to get a fixed size:
+			QWidget* Middle_widget;
+			
+			QHBoxLayout* left_middle_container;
 				QVBoxLayout* Emotions_container;
 				QVBoxLayout* Organizations_structure_container;
-			QBoxLayout* Middle_center_container;
+			QHBoxLayout* Middle_center_container;
 			QVBoxLayout* Middle_right_container;
-				QBoxLayout* Chart_container;
-				QBoxLayout* Data_library_container;
+				QHBoxLayout* Chart_container;
+				QHBoxLayout* Data_library_container;
 };
 
 #endif

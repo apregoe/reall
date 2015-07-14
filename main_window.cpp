@@ -13,7 +13,7 @@ using namespace std;
 Main_window::Main_window(){
 	setWindowTitle("Re:all Infographic software");
 
-	Outercontainer = new QHBoxLayout();
+	Outercontainer = new QVBoxLayout();
 		Header = new QHBoxLayout();
 			Logo.load("reconnect_logo_crop.jpg");
 			image_container = new QLabel();
@@ -24,6 +24,10 @@ Main_window::Main_window(){
 			library_button = new QPushButton("library");
 			search_button = new QPushButton("search");
 			random_button = new QPushButton("random");
+		Middle_container = new QVBoxLayout();
+			Middle_widget = new QWidget;
+			Middle_widget->setFixedSize(QSize(50,50));
+			Middle_widget->setStyleSheet("QWidget{background-color:red;}");
 	//Setting Main_Window
 	Outercontainer->addLayout(Header);
 		Header->addWidget(image_container);
@@ -31,5 +35,7 @@ Main_window::Main_window(){
 		Header->addWidget(library_button);
 		Header->addWidget(search_button);
 		Header->addWidget(random_button);
+	Outercontainer->addLayout(Middle_container);
+		Middle_container->addWidget(Middle_widget);
 	setLayout(Outercontainer);
 }
