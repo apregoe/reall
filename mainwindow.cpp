@@ -9,13 +9,8 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->setupUi(this);
 
     this->setWindowTitle("Reall - Infogram Software");
-
-    OuterContainer = new QGridLayout(this);
-    MainWindow_MenuBar = new QMenuBar(this);
-    	MainWindow_QMenu = new QMenu("Menu Title", this);
-
-    MainWindow_MenuBar->addMenu(MainWindow_QMenu);
-    this->setMenuBar(MainWindow_MenuBar);
+    setupActions();
+    createMenu();
 }
 
 MainWindow::~MainWindow()
@@ -23,3 +18,19 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
+void MainWindow::Create_new_file(){
+	(new MainWindow())->show();
+}
+
+void MainWindow::setupActions(){
+	NewAction = new QAction(QIcon("images/menuactionicons/new.png"), "New", this);
+	NewAction->setShortcut(QKeySequence("Ctrl+N"));
+	NewAction->setStatusTip("Create new Infographic");
+	connect(NewAction, SIGNAL(triggered(bool)), this, SLOT(Create_new_file()));
+	connect(NewAction, SIGNAL(hovered()), this, SLOT(Create_new_file()));
+}
+
+void MainWindow::createMenu(){
+	MainWindow_QMenu = this->menuBar()->addMenu("File");
+	MainWindow_QMenu->addAction(NewAction);
+}
