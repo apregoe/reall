@@ -1,7 +1,6 @@
 #include <iostream>
 #include <QApplication>
-
-#include "main_window.h"
+#include "Main_window.h"
 
 using namespace std;
 
@@ -10,10 +9,8 @@ int main(int argc, char** argv){
 
 	QApplication app(argc, argv);
 
-	Main_window reall_window;
-	reall_window.show();
+	Main_window* reall_window = new Main_window;
+	reall_window->show();
 
-	app.exec();
-
-	return 0;
+	return app.exec();
 }
