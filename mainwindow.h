@@ -3,8 +3,10 @@
 
 #include <QMainWindow>
 #include <QRect>
+#include <QRectF>
 #include <QPushButton>
 #include <QBrush>
+#include <QTimer>
 #include <QSplitter>
 #include <QGraphicsView>
 #include <QLabel>
@@ -17,41 +19,46 @@
 #include <QScrollArea>
 #include <QToolBar>
 #include <QWidget>
+#include <QDesktopWidget>
 #include <QAction>
 #include <QKeySequence>
 
-namespace Ui {
-class MainWindow;
-}
+#include <QTextEdit>
+
+#include "MyGraphicsItem.h"
 
 class MainWindow : public QMainWindow{
 Q_OBJECT
 
 public:
-    explicit MainWindow(QWidget *parent = 0);
-    ~MainWindow();
+    MainWindow(QWidget *parent = 0);
 
 private slots:
 	void Create_new_file();
 	void Save_as_file();
 	void Exit_file();
+	void Save_File();
+	void Undo_routine();
+	void Redo_routine();
+	void Load_File();
 
 private:
-    Ui::MainWindow *ui;
     QMenu* MainWindow_QMenu;
     QToolBar* MainWindow_ToolBar;
+
+    //Central Widget
+    QTextEdit* text;
+
     //Menu Actions
     QAction* NewAction;
     QAction* SaveAsAction;
-    QAction* ExitAction; 
     QAction* SaveAction;
-    //Central Widget, graphics
-    QGraphicsView* CentralWidget;
-    QGraphicsScene* GraphicsScene;
-    	//*****Testing/practicing graphicsview*****/
-    	QGraphicsRectItem* Rectangle;
-    	QGraphicsEllipseItem* Ellipse; 
-    
+    QAction* ExitAction; 
+    QAction* UndoAction;
+    QAction* RedoAction;
+    QAction* LoadAction;
+    	QString* Filepath;//file path in which the widget is
+
 
     //
     void setupActions();
@@ -61,4 +68,4 @@ private:
 
 };
 
-#endif // MAINWINDOW_H
+#endif
