@@ -8,5 +8,5 @@ DEPENDPATH += .
 INCLUDEPATH += .
 
 # Input
-HEADERS += mainwindow.h MyGraphicsItem.h
-SOURCES += main.cpp mainwindow.cpp MyGraphicsItem.cpp
+HEADERS += mainwindow.h FeaturesHandler.h
+SOURCES += main.cpp mainwindow.cpp FeaturesHandler.cpp
