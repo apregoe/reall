@@ -1,15 +1,11 @@
 #ifndef MYCENTRALRECTITEM_H
 #define MYCENTRALRECTITEM_H
-#include <QtGui>
-#include <QtCore>
-#include "MyRectItem.h"
+#include "MyCentralGraphicsItem.h"
 
-class MyCentralRectItem : public MyRectItem {
+class MyCentralRectItem : public MyCentralGraphicsItem {
 public:
 	MyCentralRectItem(const QRectF & rect, QGraphicsItem * parent = 0);
-protected:
-	void mousePressEvent(QGraphicsSceneMouseEvent * event){
-		QGraphicsRectItem::mousePressEvent(event);
-	}
+	void paint(QPainter * painter, const QStyleOptionGraphicsItem * option,
+			QWidget * widget = 0);
 };
 #endif

@@ -2,8 +2,6 @@
 
 MyRectItem::MyRectItem(const QRectF & rect, QGraphicsItem * parent)
 		: QGraphicsRectItem(rect, parent){
-	this->setFlag(QGraphicsItem::ItemIsMovable, false);
-	this->setFlag(QGraphicsItem::ItemIsSelectable,true);
 }
 
 void MyRectItem::mousePressEvent(QGraphicsSceneMouseEvent * event){
@@ -20,8 +18,4 @@ void MyRectItem::mousePressEvent(QGraphicsSceneMouseEvent * event){
 	drag->start();
 
 	QGraphicsRectItem::mousePressEvent(event);
-}
-
-QRectF MyRectItem::boundingRect() const{
-	return QRectF(-1,-2,22,22);
 }

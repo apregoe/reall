@@ -1,7 +1,5 @@
 #ifndef MYGRAPHICSVIEW_H
 #define MYGRAPHICSVIEW_H
-#include <QtGui>
-#include <QtCore>
 #include "MyDropGraphicsScene.h"
 
 class MyGraphicsView : public QGraphicsView{

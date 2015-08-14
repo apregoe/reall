@@ -25,10 +25,7 @@ void MainWindow::createCentralWidget(){
 }
 
 void MainWindow::resizeEvent(QResizeEvent * event){
-    qDebug() << "resizing mainwindow"<<endl;
     centralView->setSceneRect(this->rect());
     centralScene->setSceneRect(this->rect());
-    delete mainRect;
-    mainRect = centralScene->addRect(centralScene->sceneRect().adjusted(10,10,-10,-10));
     QMainWindow::resizeEvent(event);
 }

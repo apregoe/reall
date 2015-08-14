@@ -1,7 +1,5 @@
 #ifndef MYORGANIZATIONDOCKWIDGET_H
 #define MYORGANIZATIONDOCKWIDGET_H
-#include <QtGui>
-#include <QtCore>
 #include "MyRectItem.h"
 
 class MyOrganizationDockWidget : public QDockWidget{
