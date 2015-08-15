@@ -1,4 +1,5 @@
 #include "MyCentralGraphicsItem.h"
+#include "MyDropGraphicsScene.h"
 
 MyCentralGraphicsItem::MyCentralGraphicsItem(const QRectF & rect, QGraphicsItem * parent)
 		: QAbstractGraphicsShapeItem(parent), rMode(0), connectedItem(NULL), amIConnected(false){
@@ -134,20 +135,25 @@ void MyCentralGraphicsItem::mouseMoveEvent(QGraphicsSceneMouseEvent * event){
 			rect = QRectF(pos, QSize(newWidth, newHeight));
 			update();
 		}
+		connectScene();
+		MyCentralGraphicsItem::updateConnectingPoints();
 		return;
 	}
+	connectScene();
+	MyCentralGraphicsItem::updateConnectingPoints();
 	QAbstractGraphicsShapeItem::mouseMoveEvent(event);
 }
 
-void MyCentralGraphicsItem::connect(){
-	MyDropGraphicsScene* scene = (MyDropGraphicsScene*)this->scene();
-	if(scene->items().count() <= 1){
+void MyCentralGraphicsItem::connect(QList<QPointF> & newPoints){
+	MyDropGraphicsScene* dropScene = dynamic_cast<MyDropGraphicsScene*>(this->scene());
+	if(dropScene->items().count() <= 1){
 		amIConnected = false;
 		connectedItem = NULL;
 		qDebug() << amIConnected<<endl;
 	}
 	else{
 		amIConnected = true;
+
 		connectedItem = NULL;
 		qDebug() << amIConnected<<endl;
 	}
@@ -162,9 +168,10 @@ void MyCentralGraphicsItem::updateConnectingPoints(){
 }
 
 
-
-
-
+void MyCentralGraphicsItem::connectScene(){
+	MyDropGraphicsScene* dropScene = dynamic_cast<MyDropGraphicsScene*>(this->scene());
+	dropScene->connect();
+}
 
 
 

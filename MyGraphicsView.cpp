@@ -2,6 +2,7 @@
 
 MyGraphicsView::MyGraphicsView(MyDropGraphicsScene * scene, QWidget * parent)
 		: QGraphicsView(scene), Scene(scene){
+	setRenderHint(QPainter::Antialiasing);
 }
 void MyGraphicsView::dragEnterEvent ( QDragEnterEvent * event ){
 	QGraphicsView::dragEnterEvent(event);

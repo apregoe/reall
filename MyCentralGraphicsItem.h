@@ -1,16 +1,16 @@
 #ifndef MYCENTRALGRAPHICSITEM_H
 #define MYCENTRALGRAPHICSITEM_H
-#include "MyDropGraphicsScene.h"
+#include <QAbstractGraphicsShapeItem>
 
 class MyCentralGraphicsItem : public QAbstractGraphicsShapeItem {
 public:
 	MyCentralGraphicsItem(const QRectF & rect, QGraphicsItem * parent = 0);
 	QRectF boundingRect() const;
-	void connect();
-	QPointF up() const {return pUp;}
-	QPointF down() const{return pDown;}
-	QPointF right() const {return pRight;}
-	QPointF left() const {return pLeft;}
+	void connect(QList<QPointF> & newPoints);
+	QPointF * up() {return &pUp;}
+	QPointF * down() {return &pDown;}
+	QPointF * right() {return &pRight;}
+	QPointF * left() {return &pLeft;}
 protected:
 	void hoverMoveEvent(QGraphicsSceneHoverEvent * event);
 	void mousePressEvent(QGraphicsSceneMouseEvent * event);
@@ -20,8 +20,10 @@ protected:
 	int resizeMode() const{return rMode;}
 	void updateConnectingPoints();
 private:
+	void connectScene();
 	int rMode;
 	QGraphicsItem* connectedItem;
+	QPointF closestPoint;
 	bool amIConnected;
 	QPointF pUp, pDown, pRight, pLeft;
 	

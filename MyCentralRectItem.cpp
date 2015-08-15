@@ -1,4 +1,6 @@
 #include "MyCentralRectItem.h"
+#include <QPen>
+#include <QPainter>
 
 MyCentralRectItem::MyCentralRectItem(const QRectF & rect, QGraphicsItem * parent)
 		: MyCentralGraphicsItem(rect, parent){
