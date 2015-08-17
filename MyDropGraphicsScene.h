@@ -11,7 +11,7 @@ public:
 	void connect();
 	QList<MyCentralGraphicsItem* > items() const;
 	const double distance(const MyPointF * p1, const MyPointF * p2) const;
-	void addItem(MyCentralGraphicsItem* item);
+	void addItem(QGraphicsItem* item);
 protected:
 	void dropEvent(QGraphicsSceneDragDropEvent * event);
 	void dragEnterEvent(QGraphicsSceneDragDropEvent * event);

@@ -1,10 +1,13 @@
 #ifndef MYCENTRALGRAPHICSITEM_H
 #define MYCENTRALGRAPHICSITEM_H
 #include <QAbstractGraphicsShapeItem>
+#include "MyBrushItem.h"
 
 class MyCentralGraphicsItem : public QAbstractGraphicsShapeItem {
 public:
 	MyCentralGraphicsItem(const QRectF & rect, QGraphicsItem * parent = 0);
+	void paint(QPainter * painter, const QStyleOptionGraphicsItem * option,
+		QWidget * widget = 0);
 	QRectF boundingRect() const;
 	QPointF * up() {return &pUp;}
 	QPointF * down() {return &pDown;}

@@ -1,5 +1,6 @@
 #include "MyCentralGraphicsItem.h"
 #include "MyDropGraphicsScene.h"
+#include <QtGui>
 
 MyCentralGraphicsItem::MyCentralGraphicsItem(const QRectF & rect, QGraphicsItem * parent)
 		: QAbstractGraphicsShapeItem(parent), rMode(0), connectedItem(NULL), amIConnected(false){
@@ -7,6 +8,9 @@ MyCentralGraphicsItem::MyCentralGraphicsItem(const QRectF & rect, QGraphicsItem 
 	setFlag(QGraphicsItem::ItemIsSelectable,true);
 	this->rect = rect;
 	updateConnectingPoints();
+}
+void MyCentralGraphicsItem::paint(QPainter * painter, const QStyleOptionGraphicsItem * option,
+		QWidget * widget){
 }
 
 void MyCentralGraphicsItem::hoverMoveEvent(QGraphicsSceneHoverEvent * event){
@@ -57,6 +61,7 @@ void MyCentralGraphicsItem::mousePressEvent(QGraphicsSceneMouseEvent * event){
 	else{
 		rMode = 0;
 	}
+	update();
 	QAbstractGraphicsShapeItem::mousePressEvent(event);
 }
 

@@ -13,6 +13,9 @@ public:
 	const QPen getPen() const {return pen;}
 private:
 	enum { Type = 1 };
+	MyBrushItem* brushItem;
 	QPen pen;
+protected:
+	void mousePressEvent(QGraphicsSceneMouseEvent * event);
 };
 #endif

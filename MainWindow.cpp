@@ -1,5 +1,9 @@
 #include "MainWindow.h"
 #include "MyCentralRectItem.h"
+#include "MyCentralRectRadiousItem.h"
+#include "MyBrushItem.h"
+#include "MyCentralEllipseItem.h"
+#include "MySimpleTextItem.h"
 #include <QtCore>
 #include <cstdlib>
 
@@ -11,15 +15,22 @@ MainWindow::MainWindow(QWidget* parent) : QMainWindow(parent){
 
     createCentralWidget();
     createDockWidget();
-/*
     
     for(int i = 0; i < 10; ++i){
         int x = centralScene->sceneRect().width();
         int y = centralScene->sceneRect().height();
-        QRectF r(QPointF(std::rand() % x ,std::rand() % y), QSizeF(20,20));
-        centralScene->addItem(new MyCentralRectItem(r));
+        QRectF r(QPointF(std::rand() % x ,std::rand() % y), QSizeF(40,40));
+        int j = std::rand() % 3;
+        /*if(j == 0){
+            centralScene->addItem(new MyCentralRectItem(r));
+        }else if (j ==1){
+            centralScene->addItem(new MyCentralRectRadiousItem(r));
+        }
+        else{
+            centralScene->addItem(new MyCentralEllipseItem(r));
+        }*/
     }
-    centralScene->connect();*/
+    centralScene->connect();
 }
 
 void MainWindow::createDockWidget(){
@@ -41,3 +52,24 @@ void MainWindow::resizeEvent(QResizeEvent * event){
     centralScene->setSceneRect(this->rect());
     QMainWindow::resizeEvent(event);
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

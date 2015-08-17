@@ -13,7 +13,10 @@ public:
 	const QPen getPen() const {return pen;}
 private:
 	enum { Type = 2 };
+	//MyBrushItem* brushItem;
 	QPen pen;
 	qreal radious;
+protected:
+	void mousePressEvent(QGraphicsSceneMouseEvent * event);
 };
 #endif

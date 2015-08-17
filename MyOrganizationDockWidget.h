@@ -2,6 +2,7 @@
 #define MYORGANIZATIONDOCKWIDGET_H
 #include "MyRectItem.h"
 #include "MyRectRadiousItem.h"
+#include "MyEllipseItem.h"
 
 class MyOrganizationDockWidget : public QDockWidget{
 public:
@@ -10,8 +11,8 @@ private:
 	QGraphicsScene* scene;
 	void addShapes();
 	MyRectItem* rectItem;
+	MyEllipseItem* ellipseItem;
 	MyRectRadiousItem* radiousRectItem;
-	QGraphicsEllipseItem* ellipseItem;
 protected:
 	void resizeEvent(QResizeEvent * event);
 };

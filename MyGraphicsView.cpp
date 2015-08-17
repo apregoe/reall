@@ -3,6 +3,10 @@
 MyGraphicsView::MyGraphicsView(MyDropGraphicsScene * scene, QWidget * parent)
 		: QGraphicsView(scene), Scene(scene){
 	setRenderHint(QPainter::Antialiasing);
+	connect(Scene, SIGNAL(selectionChanged()), this, SLOT(showHideBrush()));
+}
+void MyGraphicsView::showHideBrush(){
+	qDebug() <<"selection changed!"<<endl;
 }
 void MyGraphicsView::dragEnterEvent ( QDragEnterEvent * event ){
 	QGraphicsView::dragEnterEvent(event);
