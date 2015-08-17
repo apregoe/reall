@@ -25,6 +25,7 @@ void MyCentralGraphicsItem::hoverMoveEvent(QGraphicsSceneHoverEvent * event){
 	else{
 		setCursor(Qt::ArrowCursor);
 	}
+	QAbstractGraphicsShapeItem::hoverMoveEvent(event);
 }
 
 QRectF MyCentralGraphicsItem::boundingRect() const{
@@ -144,21 +145,6 @@ void MyCentralGraphicsItem::mouseMoveEvent(QGraphicsSceneMouseEvent * event){
 	QAbstractGraphicsShapeItem::mouseMoveEvent(event);
 }
 
-void MyCentralGraphicsItem::connect(QList<QPointF> & newPoints){
-	MyDropGraphicsScene* dropScene = dynamic_cast<MyDropGraphicsScene*>(this->scene());
-	if(dropScene->items().count() <= 1){
-		amIConnected = false;
-		connectedItem = NULL;
-		qDebug() << amIConnected<<endl;
-	}
-	else{
-		amIConnected = true;
-
-		connectedItem = NULL;
-		qDebug() << amIConnected<<endl;
-	}
-}
-
 
 void MyCentralGraphicsItem::updateConnectingPoints(){
 	pUp = QPointF((rect.topLeft().x()+rect.topRight().x())/2, rect.topLeft().y());
@@ -173,7 +159,34 @@ void MyCentralGraphicsItem::connectScene(){
 	dropScene->connect();
 }
 
-
+double MyCentralGraphicsItem::topRightAngle(){
+	QRectF rect = boundingRect();
+	QPointF point = rect.topRight();
+	QPointF center = rect.center();
+	QLineF line(center, point);
+	return line.angle();
+}
+double MyCentralGraphicsItem::topLeftAngle(){
+	QRectF rect = boundingRect();
+	QPointF point = rect.topLeft();
+	QPointF center = rect.center();
+	QLineF line(center, point);
+	return line.angle();
+}
+double MyCentralGraphicsItem::bottomRightAngle(){
+	QRectF rect = boundingRect();
+	QPointF point = rect.bottomRight();
+	QPointF center = rect.center();
+	QLineF line(center, point);
+	return line.angle();
+}
+double MyCentralGraphicsItem::bottomLeftAngle(){
+	QRectF rect = boundingRect();
+	QPointF point = rect.bottomLeft();
+	QPointF center = rect.center();
+	QLineF line(center, point);
+	return line.angle();
+}
 
 
 

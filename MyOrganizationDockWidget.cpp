@@ -23,6 +23,11 @@ void MyOrganizationDockWidget::addShapes(){
 
 	point = QPointF(rectItem->boundingRect().topRight());
 	rect = QRectF(QPointF(point.x()+5,point.y()), QSizeF(20,20));
+	radiousRectItem = new MyRectRadiousItem(rect);
+	scene->addItem(radiousRectItem);
+
+	point = QPointF(radiousRectItem->boundingRect().topRight());
+	rect = QRectF(QPointF(point.x()+5,point.y()), QSizeF(20,20));
 	ellipseItem = new QGraphicsEllipseItem(rect);
 	ellipseItem->setFlag(QGraphicsItem::ItemIsMovable, false);
 	ellipseItem->setFlag(QGraphicsItem::ItemIsSelectable,true);
