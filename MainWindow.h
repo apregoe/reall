@@ -3,16 +3,32 @@
 #include "MyOrganizationDockWidget.h"
 #include "MyDropGraphicsScene.h"
 #include "MyGraphicsView.h"
+#include <QtGui>
+#include <QtCore>
 class MainWindow : public QMainWindow{
 Q_OBJECT
 public:
 	MainWindow(QWidget* parent = 0);
+	bool painterCursorActivated(){return cursorActivated;}
+private slots:
+	void painterToggled(bool toggled);
+	void rejectColor();
+	void acceptColor(const QColor &);
 private:
+	void createActions();
+	void createToolBar();
+	void createDockWidget();
+	void createCentralWidget();
+	void createPainterCursor();
 	MyOrganizationDockWidget* organizationDockWidget;
 	MyDropGraphicsScene* centralScene;
 	MyGraphicsView* centralView;
-	void createDockWidget();
-	void createCentralWidget();
+	QToolBar* toolBar;
+	QColorDialog* colorDialog;
+	QCursor* painterCursor;
+	bool cursorActivated;
+	//Actions
+	QAction* painterAction;
 protected:
 	void resizeEvent(QResizeEvent * event);
 };

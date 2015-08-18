@@ -6,7 +6,7 @@
 class MyGraphicsView : public QGraphicsView{
 Q_OBJECT
 public:
-	MyGraphicsView(MyDropGraphicsScene * scene, QWidget * parent = 0);	
+	MyGraphicsView(MyDropGraphicsScene * scene, QWidget * parent = 0);
 private slots:
 	void showHideBrush();
 private:

@@ -8,6 +8,7 @@ using namespace std;
 #define PI 3.14159265
 
 MyDropGraphicsScene::MyDropGraphicsScene(QObject * parent) : QGraphicsScene(parent){
+	paintercolor = new QColor(Qt::black);
 }
 
 void MyDropGraphicsScene::dropEvent ( QGraphicsSceneDragDropEvent * event ){
@@ -48,7 +49,9 @@ void MyDropGraphicsScene::addItem(QGraphicsItem* item){
 
 void MyDropGraphicsScene::dragEnterEvent(QGraphicsSceneDragDropEvent * event){
 	if(event && event->mimeData()){
-		event->acceptProposedAction();
+		if(event->mimeData()->hasFormat("MyItemType")){
+			event->acceptProposedAction();
+		}
 	}
 }
 

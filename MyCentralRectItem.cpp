@@ -1,5 +1,6 @@
 #include "MyCentralRectItem.h"
 #include "MyDropGraphicsScene.h"
+#include "MainWindow.h"
 #include <QPen>
 #include <QPainter>
 
@@ -15,21 +16,19 @@ MyCentralRectItem::MyCentralRectItem(const QRectF & rect, QGraphicsItem * parent
 
 void MyCentralRectItem::paint(QPainter * painter,
 		const QStyleOptionGraphicsItem * option, QWidget * widget){
-	this->pen = QPen(Qt::green, 3);
-	painter->setPen(pen);
+	painter->setPen(*(MyCentralGraphicsItem::pen));
 	painter->setRenderHint(QPainter::Antialiasing);
-	QBrush brush(Qt::white);
-	painter->setBrush(brush);
 	painter->drawRect(boundingRect());
 	MyCentralGraphicsItem::updateConnectingPoints();
 	MyCentralGraphicsItem::paint(painter, option, widget);
 }
 void MyCentralRectItem::mousePressEvent(QGraphicsSceneMouseEvent * event){
-	/*if(isSelected()){
-		brushItem->show();
+	MyGraphicsView* myView = dynamic_cast<MyGraphicsView*>(scene()->views().at(0));
+	MainWindow* window = dynamic_cast<MainWindow*>(myView->parent());
+	if(window->painterCursorActivated()){
+		MyDropGraphicsScene* scene = dynamic_cast<MyDropGraphicsScene*>(this->scene());
+		MyCentralGraphicsItem::pen->setColor(scene->painterColor());
+		this->update(boundingRect());
 	}
-	else{
-		brushItem->hide();
-	}*/
 	MyCentralGraphicsItem::mousePressEvent(event);
 }

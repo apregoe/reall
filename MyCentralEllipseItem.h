@@ -10,7 +10,11 @@ public:
 		QWidget * widget = 0);
 	int type() const{return Type;}
 	QPainterPath shape() const;
+	QRectF innerRect();
 private:
 	enum { Type = 4 };
+protected:
+	void mousePressEvent(QGraphicsSceneMouseEvent * event);
+	void hoverMoveEvent(QGraphicsSceneHoverEvent * event);
 };
 #endif	

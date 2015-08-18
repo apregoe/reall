@@ -18,6 +18,7 @@ public:
 	double bottomRightAngle();
 	double bottomLeftAngle();
 	virtual int type() const = 0;
+	QCursor getPainterCursor(){return *painterCursor;}
 	// if inheriting from this class, you might want to define enum { Type = x}; as a private member
 protected:
 	void hoverMoveEvent(QGraphicsSceneHoverEvent * event);
@@ -25,7 +26,9 @@ protected:
 	void mouseMoveEvent(QGraphicsSceneMouseEvent * event);
 	bool verifyCorner(const QPointF & p1,const QPointF & p2);
 	int resizeMode() const{return rMode;}
+	void setResizeMode(int i){rMode = i;}
 	void updateConnectingPoints();
+	QPen* pen;
 private:
 	void connectScene();
 	int rMode;
@@ -33,7 +36,8 @@ private:
 	QPointF closestPoint;
 	bool amIConnected;
 	QRectF rect;
-	QPointF pUp, pDown, pRight, pLeft;
+	QCursor* painterCursor;
+ 	QPointF pUp, pDown, pRight, pLeft;
 	
 };
 #endif

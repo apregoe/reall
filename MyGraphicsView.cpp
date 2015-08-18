@@ -6,7 +6,6 @@ MyGraphicsView::MyGraphicsView(MyDropGraphicsScene * scene, QWidget * parent)
 	connect(Scene, SIGNAL(selectionChanged()), this, SLOT(showHideBrush()));
 }
 void MyGraphicsView::showHideBrush(){
-	qDebug() <<"selection changed!"<<endl;
 }
 void MyGraphicsView::dragEnterEvent ( QDragEnterEvent * event ){
 	QGraphicsView::dragEnterEvent(event);

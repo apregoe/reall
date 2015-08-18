@@ -1,16 +1,27 @@
 #include "MyCentralGraphicsItem.h"
 #include "MyDropGraphicsScene.h"
+#include "MainWindow.h"
 #include <QtGui>
 
 MyCentralGraphicsItem::MyCentralGraphicsItem(const QRectF & rect, QGraphicsItem * parent)
 		: QAbstractGraphicsShapeItem(parent), rMode(0), connectedItem(NULL), amIConnected(false){
 	setFlag(QGraphicsItem::ItemIsMovable, true);
 	setFlag(QGraphicsItem::ItemIsSelectable,true);
+    QPixmap pMap = QPixmap("brush.png");
+    pen = new QPen(Qt::black,3);
+    painterCursor = new QCursor(pMap.scaled(QSize(14,14)), Qt::IgnoreAspectRatio);
 	this->rect = rect;
 	updateConnectingPoints();
 }
 void MyCentralGraphicsItem::paint(QPainter * painter, const QStyleOptionGraphicsItem * option,
 		QWidget * widget){
+	if(isSelected()){
+		QPen dottedPen(Qt::black,1);
+		dottedPen.setStyle(Qt::DashLine);
+		painter->setPen(dottedPen);
+		painter->setBrush(QBrush(Qt::NoBrush));
+		painter->drawRect(boundingRect());
+	}
 }
 
 void MyCentralGraphicsItem::hoverMoveEvent(QGraphicsSceneHoverEvent * event){
@@ -27,7 +38,11 @@ void MyCentralGraphicsItem::hoverMoveEvent(QGraphicsSceneHoverEvent * event){
 		setCursor(Qt::SizeFDiagCursor);
 	}
 	else{
-		setCursor(Qt::ArrowCursor);
+		MyGraphicsView* myView = dynamic_cast<MyGraphicsView*>(scene()->views().at(0));
+		MainWindow* window = dynamic_cast<MainWindow*>(myView->parent());
+		if(window->painterCursorActivated()){
+			setCursor(*painterCursor);
+		}else{setCursor(Qt::ArrowCursor);}
 	}
 	QAbstractGraphicsShapeItem::hoverMoveEvent(event);
 }
@@ -46,22 +61,28 @@ bool MyCentralGraphicsItem::verifyCorner(const QPointF & p1, const QPointF & p2)
 }
 
 void MyCentralGraphicsItem::mousePressEvent(QGraphicsSceneMouseEvent * event){
+	MyGraphicsView* myView = dynamic_cast<MyGraphicsView*>(scene()->views().at(0));
+	MainWindow* window = dynamic_cast<MainWindow*>(myView->parent());
+	if(window->painterCursorActivated()){
+		MyDropGraphicsScene* scene = dynamic_cast<MyDropGraphicsScene*>(this->scene());
+		pen->setColor(scene->painterColor());
+	}
 	if(verifyCorner(boundingRect().topLeft(), event->pos())){
-		rMode = 1;
+		setResizeMode(1);
 	}
 	else if(verifyCorner(boundingRect().topRight(), event->pos())){
-		rMode = 2;
+		setResizeMode(2);
 	}
 	else if(verifyCorner(boundingRect().bottomLeft(), event->pos())){
-		rMode = 3;
+		setResizeMode(3);
 	}
 	else if(verifyCorner(boundingRect().bottomRight(), event->pos())){
-		rMode = 4;
+		setResizeMode(4);
 	}
 	else{
-		rMode = 0;
+		setResizeMode(0);
 	}
-	update();
+	update(boundingRect());
 	QAbstractGraphicsShapeItem::mousePressEvent(event);
 }
 
@@ -87,7 +108,7 @@ void MyCentralGraphicsItem::mouseMoveEvent(QGraphicsSceneMouseEvent * event){
 			int newWidth = rect.width()+(lastPos.x()-pos.x());
 			int newHeight = rect.height() + (lastPos.y()-pos.y());
 			rect = QRectF(pos, QSize(newWidth, newHeight));
-			update();
+			update(boundingRect());
 		}
 		else if(mode == 2){//top right
 			if(rect.height() <= 20){
@@ -104,7 +125,7 @@ void MyCentralGraphicsItem::mouseMoveEvent(QGraphicsSceneMouseEvent * event){
 			int newHeight = rect.height() + (lastPos.y()-pos.y());
 			pos.setX(oldRect.topLeft().x());
 			rect = QRectF(pos, QSize(newWidth, newHeight));
-			update();
+			update(boundingRect());
 		}
 		else if(mode == 3){//bottomLeft
 			if(rect.height() <= 20){
@@ -121,7 +142,7 @@ void MyCentralGraphicsItem::mouseMoveEvent(QGraphicsSceneMouseEvent * event){
 			int newHeight = rect.height() + (pos.y()-lastPos.y());
 			pos.setY(oldRect.topLeft().y());
 			rect = QRectF(pos, QSize(newWidth, newHeight));
-			update();
+			update(boundingRect());
 		}
 		else if(mode == 4){//bottomRight
 			if(rect.height() <= 20){
@@ -139,7 +160,7 @@ void MyCentralGraphicsItem::mouseMoveEvent(QGraphicsSceneMouseEvent * event){
 			pos.setY(oldRect.topLeft().y());
 			pos.setX(oldRect.topLeft().x());
 			rect = QRectF(pos, QSize(newWidth, newHeight));
-			update();
+			update(boundingRect());
 		}
 		connectScene();
 		MyCentralGraphicsItem::updateConnectingPoints();

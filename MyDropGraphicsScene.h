@@ -12,6 +12,8 @@ public:
 	QList<MyCentralGraphicsItem* > items() const;
 	const double distance(const MyPointF * p1, const MyPointF * p2) const;
 	void addItem(QGraphicsItem* item);
+	void setPainterColor(QColor color){paintercolor->setRgb(color.rgba());}
+	QColor painterColor(){return *paintercolor;}
 protected:
 	void dropEvent(QGraphicsSceneDragDropEvent * event);
 	void dragEnterEvent(QGraphicsSceneDragDropEvent * event);
@@ -20,6 +22,7 @@ private:
 	void reduceLineToBorders(QLineF &, MyPointF *, int);
 	QList<MyCentralGraphicsItem*> myItems;
 	QList<QGraphicsItem* > linesList;
+	QColor* paintercolor;
 };
 
 #endif
