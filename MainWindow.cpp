@@ -6,7 +6,7 @@
 #include <cstdlib>
 
 MainWindow::MainWindow(QWidget* parent) : QMainWindow(parent){
-	this->setWindowTitle("Re:all - Infogram Software");
+	this->setWindowTitle("re:all - Interactive Infographic");
     QDesktopWidget dw;
 
     this->resize(dw.width()*0.65, dw.height()*0.65);
