@@ -12,6 +12,8 @@ QRectF MyBrushItem::boundingRect() const{
 
 void MyBrushItem::paint(QPainter * painter
 		,const QStyleOptionGraphicsItem * option, QWidget * widget){
+	Q_UNUSED(option);
+	Q_UNUSED(widget);
 	QPixmap pm("brush.png");
 	pm = pm.scaled(15,15);
 	painter->drawPixmap(point, pm);

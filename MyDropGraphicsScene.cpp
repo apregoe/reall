@@ -3,6 +3,7 @@
 #include "MyCentralRectItem.h"
 #include "MyCentralRectRadiousItem.h"
 #include "MyCentralEllipseItem.h"
+#include "MySimpleTextItem.h"
 using namespace std;
 
 #define PI 3.14159265
@@ -15,26 +16,33 @@ void MyDropGraphicsScene::dropEvent ( QGraphicsSceneDragDropEvent * event ){
 	QByteArray byteArray = event->mimeData()->data("MyItemType");
 	int type = byteArray.toInt();
 	QPointF point = event->scenePos();
-	MyCentralGraphicsItem* item;
+	QGraphicsItem* item;
 	if(type == 1){
 		item = new MyCentralRectItem(QRectF(point, QSizeF(40,40)));
 		this->addItem(item);
+		item->setZValue(1);
 	}
 	else if(type == 2){
 		item = new MyCentralRectRadiousItem(QRectF(point, QSizeF(40,40)));
-		this->addItem(item);	
+		this->addItem(item);
+		item->setZValue(1);
 	}
 	else if(type == 4){
 		item = new MyCentralEllipseItem(QRectF(point, QSizeF(40,40)));
 		this->addItem(item);
+		item->setZValue(1);
 	}
-	item->setZValue(1);
+	else if(type == 5){
+		item = new MySimpleTextItem("Write here");
+		this->addItem(item);
+		item->moveBy(point.x(), point.y());
+		item->setZValue(10);
+	}
 
 	//Connecting the closest Item with the one that is being dropped!
 	this->connect();//I also call this in MyCentralGraphicsItem, mousemove event is called
 	//Gathering the closest points. The points will me added to a
 	//priority queue in which the closestone will be on top
-
 	QGraphicsScene::dropEvent(event);
 }
 void MyDropGraphicsScene::addItem(QGraphicsItem* item){
@@ -53,6 +61,25 @@ void MyDropGraphicsScene::dragEnterEvent(QGraphicsSceneDragDropEvent * event){
 			event->acceptProposedAction();
 		}
 	}
+	QGraphicsScene::dragEnterEvent(event);
+}
+void MyDropGraphicsScene::removeItem(QGraphicsItem* item){
+	for(int i = 0; i < myItems.size(); ++i){
+		if(item == myItems[i]){
+			myItems.removeAt(i);
+			QGraphicsScene::removeItem(item);
+		}
+	}
+}
+void MyDropGraphicsScene::keyPressEvent(QKeyEvent * event){
+	if(event->key() == Qt::Key_Backspace){
+		QList<QGraphicsItem*> itemList = selectedItems();
+		for(int i = 0; i < itemList.size(); ++i){
+			this->removeItem(itemList[i]);
+		}
+		this->connect();
+	}
+	QGraphicsScene::keyPressEvent(event);
 }
 
 QList<MyCentralGraphicsItem* > MyDropGraphicsScene::items() const{
@@ -62,6 +89,10 @@ QList<MyCentralGraphicsItem* > MyDropGraphicsScene::items() const{
 void MyDropGraphicsScene::connect(){
 	QList<MyCentralGraphicsItem *> myItems = this->items();
 	if(myItems.count() <= 1){
+		for(int i = 0; i < linesList.count(); ++i){
+			QGraphicsScene::removeItem(linesList[i]);
+			delete linesList[i];
+		}
 		return;
 	}
 	QList<MyPointF *> allPoints;
@@ -78,8 +109,6 @@ void MyDropGraphicsScene::connect(){
 	}
 
 	for(int i = 0; i < allPoints.count(); ++i){
-		//the next line is valid since allPoints.count() = myItems.count()
-		MyCentralGraphicsItem* currentItem = myItems[i];
 		for(int j = 0; j < allPoints.count(); ++j){
 			MyPointF* p1 = allPoints[i];
 			MyPointF* p2 = allPoints[j];
@@ -94,7 +123,7 @@ void MyDropGraphicsScene::connect(){
 	}
 
 	for(int i = 0; i < linesList.count(); ++i){
-		removeItem(linesList[i]);
+		QGraphicsScene::removeItem(linesList[i]);
 		delete linesList[i];
 	}
 
@@ -116,7 +145,7 @@ void MyDropGraphicsScene::connect(){
 
 }
 
-const double MyDropGraphicsScene::distance(const MyPointF * p1, const MyPointF * p2) const{
+double MyDropGraphicsScene::distance(const MyPointF * p1, const MyPointF * p2) const{
 	double dx2 = std::pow(p1->x() - p2->x(), 2);
 	double dy2 = std::pow(p1->y() - p2->y(),2);
 	const double distance_ =  std::sqrt(dx2+dy2);
@@ -212,7 +241,6 @@ void MyDropGraphicsScene::reduceLineToBorders(QLineF & line, MyPointF * point, i
 		float positive_rootY = slope*positive_root - y_in;
 		qDebug() << positive_root << positive_rootY<<endl;
 
-		/*
 		if(it == 0){line.setP1(QPointF(positive_root,positive_rootY));}
 		else{line.setP2(QPointF(positive_root,positive_rootY));}*/
 		

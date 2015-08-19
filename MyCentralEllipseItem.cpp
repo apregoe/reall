@@ -31,8 +31,8 @@ QPainterPath MyCentralEllipseItem::shape() const{
 
 QRectF MyCentralEllipseItem::innerRect(){
 	QRectF r = boundingRect();
-	float a = r.width()/2;
-	float b = r.height()/2;
+	float a = r.width()/2.0;
+	float b = r.height()/2.0;
 	float x = a*(std::sqrt(2))/2.0;
 	float y = b*(std::sqrt(2))/2.0;
 	QRectF returnRect(QPointF(x,-y),QPointF(-x,y));
@@ -64,7 +64,11 @@ void MyCentralEllipseItem::mousePressEvent(QGraphicsSceneMouseEvent * event){
 	else{
 		setResizeMode(0);
 	}
-	update(boundingRect());
+	//
+	//I dont use MyCentralGraphicsItem::mousePressEvent(event) here since
+	//its implementation of this event handler uses the boundingRect(), 
+	//instead of the innerRect()
+	//
 	QAbstractGraphicsShapeItem::mousePressEvent(event);
 }
 

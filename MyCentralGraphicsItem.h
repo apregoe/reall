@@ -32,9 +32,7 @@ protected:
 private:
 	void connectScene();
 	int rMode;
-	QGraphicsItem* connectedItem;
 	QPointF closestPoint;
-	bool amIConnected;
 	QRectF rect;
 	QCursor* painterCursor;
  	QPointF pUp, pDown, pRight, pLeft;

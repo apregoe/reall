@@ -4,9 +4,10 @@
 #include <QtGui>
 
 MyCentralGraphicsItem::MyCentralGraphicsItem(const QRectF & rect, QGraphicsItem * parent)
-		: QAbstractGraphicsShapeItem(parent), rMode(0), connectedItem(NULL), amIConnected(false){
+		: QAbstractGraphicsShapeItem(parent), rMode(0){
 	setFlag(QGraphicsItem::ItemIsMovable, true);
 	setFlag(QGraphicsItem::ItemIsSelectable,true);
+
     QPixmap pMap = QPixmap("brush.png");
     pen = new QPen(Qt::black,3);
     painterCursor = new QCursor(pMap.scaled(QSize(14,14)), Qt::IgnoreAspectRatio);
@@ -15,6 +16,8 @@ MyCentralGraphicsItem::MyCentralGraphicsItem(const QRectF & rect, QGraphicsItem 
 }
 void MyCentralGraphicsItem::paint(QPainter * painter, const QStyleOptionGraphicsItem * option,
 		QWidget * widget){
+	Q_UNUSED(option);
+	Q_UNUSED(widget);
 	if(isSelected()){
 		QPen dottedPen(Qt::black,1);
 		dottedPen.setStyle(Qt::DashLine);
@@ -22,6 +25,21 @@ void MyCentralGraphicsItem::paint(QPainter * painter, const QStyleOptionGraphics
 		painter->setBrush(QBrush(Qt::NoBrush));
 		painter->drawRect(boundingRect());
 	}
+}
+
+
+
+QRectF MyCentralGraphicsItem::boundingRect() const{
+	return rect;
+}
+
+bool MyCentralGraphicsItem::verifyCorner(const QPointF & p1, const QPointF & p2){
+	if((p1.x() <= p2.x()+8) && (p1.x() >= p2.x() -8)){
+		if((p1.y() <= p2.y()+8) && (p1.y() >= p2.y() -8)){
+			return true;
+		}
+	}	
+	return false;
 }
 
 void MyCentralGraphicsItem::hoverMoveEvent(QGraphicsSceneHoverEvent * event){
@@ -45,19 +63,6 @@ void MyCentralGraphicsItem::hoverMoveEvent(QGraphicsSceneHoverEvent * event){
 		}else{setCursor(Qt::ArrowCursor);}
 	}
 	QAbstractGraphicsShapeItem::hoverMoveEvent(event);
-}
-
-QRectF MyCentralGraphicsItem::boundingRect() const{
-	return rect;
-}
-
-bool MyCentralGraphicsItem::verifyCorner(const QPointF & p1, const QPointF & p2){
-	if((p1.x() <= p2.x()+8) && (p1.x() >= p2.x() -8)){
-		if((p1.y() <= p2.y()+8) && (p1.y() >= p2.y() -8)){
-			return true;
-		}
-	}	
-	return false;
 }
 
 void MyCentralGraphicsItem::mousePressEvent(QGraphicsSceneMouseEvent * event){

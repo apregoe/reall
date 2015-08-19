@@ -3,6 +3,7 @@
 #include "MyRectItem.h"
 #include "MyRectRadiousItem.h"
 #include "MyEllipseItem.h"
+#include "MyDockTextItem.h"
 
 class MyOrganizationDockWidget : public QDockWidget{
 public:
@@ -13,6 +14,7 @@ private:
 	MyRectItem* rectItem;
 	MyEllipseItem* ellipseItem;
 	MyRectRadiousItem* radiousRectItem;
+	MyDockTextItem* textEditItem;
 protected:
 	void resizeEvent(QResizeEvent * event);
 };

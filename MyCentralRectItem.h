@@ -12,7 +12,6 @@ public:
 	int type() const{return Type;}
 private:
 	enum { Type = 1 };
-	MyBrushItem* brushItem;
 protected:
 	void mousePressEvent(QGraphicsSceneMouseEvent * event);
 };

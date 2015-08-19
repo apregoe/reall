@@ -7,6 +7,8 @@ MyRectRadiousItem::MyRectRadiousItem(const QRectF & rect, QGraphicsItem * parent
 }
 void MyRectRadiousItem::paint(QPainter * painter,
 		const QStyleOptionGraphicsItem * option, QWidget * widget){
+	Q_UNUSED(option);
+	Q_UNUSED(widget);
 	QPen pen(Qt::black, 1.5);
 	painter->setPen(pen);
 	QBrush brush(Qt::white);

@@ -17,6 +17,8 @@ MainWindow::MainWindow(QWidget* parent) : QMainWindow(parent){
     createCentralWidget();
     createPainterCursor();
     createDockWidget();
+    //MySimpleTextItem* textItem = new MySimpleTextItem("text Here");
+    //centralScene->addItem(textItem);
     /*
     for(int i = 0; i < 10; ++i){
         int x = centralScene->sceneRect().width();
@@ -73,6 +75,7 @@ void MainWindow::painterToggled(bool toggled){
         colorDialog->exec();
     }
     else{
+    	qDebug()<<"ArrowCursor";
 	    setCursor(Qt::ArrowCursor);
 	    centralView->setCursor(Qt::ArrowCursor);
 	    cursorActivated = false;

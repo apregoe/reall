@@ -10,18 +10,20 @@ public:
 	MyDropGraphicsScene(QObject * parent = 0);
 	void connect();
 	QList<MyCentralGraphicsItem* > items() const;
-	const double distance(const MyPointF * p1, const MyPointF * p2) const;
+	double distance(const MyPointF * p1, const MyPointF * p2) const;
 	void addItem(QGraphicsItem* item);
 	void setPainterColor(QColor color){paintercolor->setRgb(color.rgba());}
 	QColor painterColor(){return *paintercolor;}
+	void removeItem(QGraphicsItem* item);
 protected:
 	void dropEvent(QGraphicsSceneDragDropEvent * event);
 	void dragEnterEvent(QGraphicsSceneDragDropEvent * event);
 	void dragMoveEvent(QGraphicsSceneDragDropEvent * event){Q_UNUSED(event);}
+	void keyPressEvent(QKeyEvent * event);
 private:
 	void reduceLineToBorders(QLineF &, MyPointF *, int);
 	QList<MyCentralGraphicsItem*> myItems;
-	QList<QGraphicsItem* > linesList;
+	QList<QGraphicsLineItem* > linesList;
 	QColor* paintercolor;
 };
 

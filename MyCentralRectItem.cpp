@@ -7,11 +7,6 @@
 MyCentralRectItem::MyCentralRectItem(const QRectF & rect, QGraphicsItem * parent)
 		: MyCentralGraphicsItem(rect, parent){
 	setAcceptHoverEvents(true);
-	
-	/*brushItem = new MyBrushItem(QPointF(10,10));
-	MyDropGraphicsScene* dropScene = dynamic_cast<MyDropGraphicsScene*>(this->scene());
-	dropScene->addItem(brushItem);
-	brushItem->hide();*/
 }
 
 void MyCentralRectItem::paint(QPainter * painter,

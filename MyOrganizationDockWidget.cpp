@@ -30,6 +30,11 @@ void MyOrganizationDockWidget::addShapes(){
 	rect = QRectF(QPointF(point.x()+5,point.y()), QSizeF(20,20));
 	ellipseItem = new MyEllipseItem(rect);
 	scene->addItem(ellipseItem);
+
+	point = QPointF(ellipseItem->boundingRect().topRight());
+	rect = QRectF(QPointF(point.x()+5,point.y()), QSizeF(20,20));
+	textEditItem = new MyDockTextItem(rect);
+	scene->addItem(textEditItem);
 	
 	view->setHorizontalScrollBarPolicy (Qt::ScrollBarAsNeeded);
 	view->setVerticalScrollBarPolicy (Qt::ScrollBarAsNeeded);
