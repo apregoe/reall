@@ -7,9 +7,9 @@ MyCentralGraphicsItem::MyCentralGraphicsItem(const QRectF & rect, QGraphicsItem 
 	setFlag(QGraphicsItem::ItemIsMovable, true);
 	setFlag(QGraphicsItem::ItemIsSelectable,true);
 
-    QPixmap pMap = QPixmap("brush.png");
+    QPixmap pMap = QPixmap(":/images/brush.png");
     pen = new QPen(Qt::black,3);
-    painterCursor = new QCursor(pMap.scaled(QSize(14,14)), Qt::IgnoreAspectRatio);
+    painterCursor = QCursor(pMap.scaled(QSize(14,14)), Qt::IgnoreAspectRatio);
 	this->rect = rect;
 	updateConnectingPoints();
 }
@@ -25,8 +25,6 @@ void MyCentralGraphicsItem::paint(QPainter * painter, const QStyleOptionGraphics
 		painter->drawRect(boundingRect());
 	}
 }
-
-
 
 QRectF MyCentralGraphicsItem::boundingRect() const{
 	return rect;
@@ -58,8 +56,14 @@ void MyCentralGraphicsItem::hoverMoveEvent(QGraphicsSceneHoverEvent * event){
 		MyGraphicsView* myView = dynamic_cast<MyGraphicsView*>(scene()->views().at(0));
 		MainWindow* window = dynamic_cast<MainWindow*>(myView->parent());
 		if(window->painterCursorActivated()){
-			setCursor(*painterCursor);
-		}else{setCursor(Qt::ArrowCursor);}
+			setCursor(painterCursor);
+			window->setCursor(painterCursor);
+			myView->setCursor(painterCursor);
+		}else{
+			this->setCursor(Qt::ArrowCursor);
+			window->setCursor(Qt::ArrowCursor);
+			myView->setCursor(Qt::ArrowCursor);
+		}
 	}
 	QAbstractGraphicsShapeItem::hoverMoveEvent(event);
 }

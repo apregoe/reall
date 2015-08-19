@@ -4,6 +4,7 @@
 #include "MyCentralRectRadiousItem.h"
 #include "MyCentralEllipseItem.h"
 #include "MySimpleTextItem.h"
+#include "MainWindow.h"
 using namespace std;
 
 #define PI 3.14159265
@@ -301,15 +302,18 @@ void MyDropGraphicsScene::reduceLineToBorders(QLineF & line, MyPointF * point, i
 	reduceLineToBorders(line, point->closestPoint, ++it);
 }
 
-
-
-
-
-
-
-
-
-
+bool MyDropGraphicsScene::event(QEvent * event){
+	if(event->type() == QEvent::Enter){
+		MainWindow* window = dynamic_cast<MainWindow*>(parent()->parent());
+		if(window->painterCursorActivated()){
+			window->setCursor(window->getPainterCursor());
+		}
+		else{
+			window->setCursor(Qt::ArrowCursor);
+		}
+	}
+	return QGraphicsScene::event(event);
+}
 
 
 

@@ -125,7 +125,13 @@ void MyCentralEllipseItem::hoverMoveEvent(QGraphicsSceneHoverEvent * event){
 		//a color from the brush in the tool bar
 		if(window->painterCursorActivated()){
 			setCursor(getPainterCursor());
-		}else{setCursor(Qt::ArrowCursor);}
+			window->setCursor(getPainterCursor());
+			myView->setCursor(getPainterCursor());
+		}else{
+			this->setCursor(Qt::ArrowCursor);
+			window->setCursor(Qt::ArrowCursor);
+			myView->setCursor(Qt::ArrowCursor);
+		}
 	}
 	QAbstractGraphicsShapeItem::hoverMoveEvent(event);
 }

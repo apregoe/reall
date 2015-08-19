@@ -20,6 +20,7 @@ protected:
 	void dragEnterEvent(QGraphicsSceneDragDropEvent * event);
 	void dragMoveEvent(QGraphicsSceneDragDropEvent * event){Q_UNUSED(event);}
 	void keyPressEvent(QKeyEvent * event);
+	bool event(QEvent * event);
 private:
 	void reduceLineToBorders(QLineF &, MyPointF *, int);
 	QList<MyCentralGraphicsItem*> myItems;

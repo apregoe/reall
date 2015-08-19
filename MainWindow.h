@@ -9,7 +9,8 @@ class MainWindow : public QMainWindow{
 Q_OBJECT
 public:
 	MainWindow(QWidget* parent = 0);
-	bool painterCursorActivated(){return cursorActivated;}
+	bool painterCursorActivated(){return painterCursorActivated_;}
+	QCursor getPainterCursor(){return painterCursor;}
 private slots:
 	void painterToggled(bool toggled);
 	void rejectColor();
@@ -25,8 +26,8 @@ private:
 	MyGraphicsView* centralView;
 	QToolBar* toolBar;
 	QColorDialog* colorDialog;
-	QCursor* painterCursor;
-	bool cursorActivated;
+	QCursor painterCursor;
+	bool painterCursorActivated_;
 	//Actions
 	QAction* painterAction;
 protected:

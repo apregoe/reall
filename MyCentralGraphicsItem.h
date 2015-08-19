@@ -19,7 +19,7 @@ public:
 	double bottomRightAngle();
 	double bottomLeftAngle();
 	virtual int type() const = 0;
-	QCursor getPainterCursor(){return *painterCursor;}
+	QCursor getPainterCursor(){return painterCursor;}
 	// if inheriting from this class, you might want to define enum { Type = x}; as a private member
 protected:
 	void hoverMoveEvent(QGraphicsSceneHoverEvent * event);
@@ -35,7 +35,7 @@ private:
 	int rMode;
 	QPointF closestPoint;
 	QRectF rect;
-	QCursor* painterCursor;
+	QCursor painterCursor;
  	QPointF pUp, pDown, pRight, pLeft;
 	
 };
