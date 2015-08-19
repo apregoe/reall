@@ -2,9 +2,10 @@
 #include "MainWindow.h"
 
 int main(int argc, char *argv[]){
-	QApplication a(argc, argv);
+	QApplication app(argc, argv);
+	app.setWindowIcon(QIcon("reall.jpg"));
 	//I create MainWindow in MainWindow.h
 	MainWindow h;
 	h.show();
-	return a.exec();
+	return app.exec();
 }

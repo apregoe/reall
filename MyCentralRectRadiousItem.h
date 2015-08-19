@@ -2,7 +2,7 @@
 #define MYCENTRALRECTRADIOUSITEM_H
 #include "MyCentralGraphicsItem.h"
 #include <QtCore>
-#include <QPen>
+#include <QtGui>
 
 class MyCentralRectRadiousItem : public MyCentralGraphicsItem {
 public:
@@ -10,12 +10,8 @@ public:
 	void paint(QPainter * painter, const QStyleOptionGraphicsItem * option,
 			QWidget * widget = 0);
 	int type() const{return Type;}
-	const QPen getPen() const {return pen;}
 private:
 	enum { Type = 2 };
-	//MyBrushItem* brushItem;
-	QPen pen;
-	qreal radious;
 protected:
 	void mousePressEvent(QGraphicsSceneMouseEvent * event);
 };

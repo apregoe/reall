@@ -7,11 +7,6 @@
 MyCentralRectRadiousItem::MyCentralRectRadiousItem(const QRectF & rect, QGraphicsItem * parent)
 		: MyCentralGraphicsItem(rect, parent){
 	setAcceptHoverEvents(true);
-	/*brushItem = new MyBrushItem(QPointF(10,10));
-	MyDropGraphicsScene* dropScene = dynamic_cast<MyDropGraphicsScene*>(this->scene());
-	dropScene->addItem(brushItem);
-	brushItem->hide();
-	*/
 }
 
 void MyCentralRectRadiousItem::paint(QPainter * painter,
@@ -20,7 +15,6 @@ void MyCentralRectRadiousItem::paint(QPainter * painter,
 	painter->setRenderHint(QPainter::Antialiasing);
 	QBrush brush(Qt::white);
 	painter->setBrush(brush);
-	radious = 45;
 	painter->drawRoundedRect(boundingRect(), 45,45,Qt::RelativeSize);
 	MyCentralGraphicsItem::updateConnectingPoints();
 	MyCentralGraphicsItem::paint(painter, option, widget);

@@ -1,7 +1,8 @@
 #ifndef MYCENTRALGRAPHICSITEM_H
 #define MYCENTRALGRAPHICSITEM_H
 #include <QAbstractGraphicsShapeItem>
-#include "MyBrushItem.h"
+#include <QtGui>
+#include <QtCore>
 
 class MyCentralGraphicsItem : public QAbstractGraphicsShapeItem {
 public:

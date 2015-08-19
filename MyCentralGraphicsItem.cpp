@@ -1,7 +1,6 @@
 #include "MyCentralGraphicsItem.h"
 #include "MyDropGraphicsScene.h"
 #include "MainWindow.h"
-#include <QtGui>
 
 MyCentralGraphicsItem::MyCentralGraphicsItem(const QRectF & rect, QGraphicsItem * parent)
 		: QAbstractGraphicsShapeItem(parent), rMode(0){

@@ -1,7 +1,6 @@
 #include "MainWindow.h"
 #include "MyCentralRectItem.h"
 #include "MyCentralRectRadiousItem.h"
-#include "MyBrushItem.h"
 #include "MyCentralEllipseItem.h"
 #include "MySimpleTextItem.h"
 #include <cstdlib>
@@ -38,11 +37,13 @@ MainWindow::MainWindow(QWidget* parent) : QMainWindow(parent){
 }
 void MainWindow::createPainterCursor(){
     QPixmap pMap = QPixmap("brush.png");
-    painterCursor = new QCursor(pMap.scaled(QSize(14,14)), Qt::IgnoreAspectRatio);
+    pMap = pMap.scaled(QSize(14,14));
+    painterCursor = new QCursor((pMap), Qt::IgnoreAspectRatio);
 }
 
 void MainWindow::createActions(){
-    painterAction = new QAction(QIcon("brush.png"), "Color Selection", this);
+    QIcon icon("brush.png");
+    painterAction = new QAction(icon, "Color Selection", this);
     painterAction->setCheckable(true);
     connect(painterAction, SIGNAL(toggled(bool)), this, SLOT(painterToggled(bool)));
         //Color dialog
