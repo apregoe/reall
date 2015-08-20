@@ -84,12 +84,20 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pro-methods">Protected Member Functions</a> &#124;
+<a href="#pub-static-methods">Static Public Member Functions</a> &#124;
+<a href="#pri-slots">Private Slots</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="class_main_window-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">MainWindow Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>This is the main window.  
+ <a href="class_main_window.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="_main_window_8h_source.html">MainWindow.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for MainWindow:</div>
 <div class="dyncontent">
@@ -104,19 +112,272 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a8b244be8b7b7db1b08de2a2acb9409db"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a8b244be8b7b7db1b08de2a2acb9409db"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><b>MainWindow</b> (QWidget *parent=0)</td></tr>
 <tr class="separator:a8b244be8b7b7db1b08de2a2acb9409db"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0f6f0466e2aca15edd6c820a686c6b57"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a0f6f0466e2aca15edd6c820a686c6b57"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>painterCursorActivated</b> ()</td></tr>
+<tr class="memitem:a0f6f0466e2aca15edd6c820a686c6b57"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#a0f6f0466e2aca15edd6c820a686c6b57">painterCursorActivated</a> ()</td></tr>
+<tr class="memdesc:a0f6f0466e2aca15edd6c820a686c6b57"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks weather the painter Cursor is activated.  <a href="#a0f6f0466e2aca15edd6c820a686c6b57">More...</a><br /></td></tr>
 <tr class="separator:a0f6f0466e2aca15edd6c820a686c6b57"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa0e9c2933778a0a94a2d2010b28ee0f2"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa0e9c2933778a0a94a2d2010b28ee0f2"></a>
-QCursor&#160;</td><td class="memItemRight" valign="bottom"><b>getPainterCursor</b> ()</td></tr>
+QCursor&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#aa0e9c2933778a0a94a2d2010b28ee0f2">getPainterCursor</a> ()</td></tr>
+<tr class="memdesc:aa0e9c2933778a0a94a2d2010b28ee0f2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the painterCursor. <br /></td></tr>
 <tr class="separator:aa0e9c2933778a0a94a2d2010b28ee0f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
-Protected Member Functions</h2></td></tr>
-<tr class="memitem:ae12f8f63791595567b6250f8bb002bda"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae12f8f63791595567b6250f8bb002bda"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>resizeEvent</b> (QResizeEvent *event)</td></tr>
-<tr class="separator:ae12f8f63791595567b6250f8bb002bda"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
+Static Public Member Functions</h2></td></tr>
+<tr class="memitem:a7b3e2567ab0bf7dd1a3461d60eb45bf1"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a7b3e2567ab0bf7dd1a3461d60eb45bf1"></a>
+static QCursor&#160;</td><td class="memItemRight" valign="bottom"><b>getPainterCursor</b> ()</td></tr>
+<tr class="separator:a7b3e2567ab0bf7dd1a3461d60eb45bf1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-slots"></a>
+Private Slots</h2></td></tr>
+<tr class="memitem:a8ccae81777f7010d6204509dc5fc111f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#a8ccae81777f7010d6204509dc5fc111f">painterToggled</a> (bool toggled)</td></tr>
+<tr class="memdesc:a8ccae81777f7010d6204509dc5fc111f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Emmited when the toggled(bool) signal from painterAction is triggered.  <a href="#a8ccae81777f7010d6204509dc5fc111f">More...</a><br /></td></tr>
+<tr class="separator:a8ccae81777f7010d6204509dc5fc111f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae066828157a539ceab8d1c2e491073bd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#ae066828157a539ceab8d1c2e491073bd">rejectColor</a> ()</td></tr>
+<tr class="memdesc:ae066828157a539ceab8d1c2e491073bd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Emmited when the reject() signal from colorDialog is triggered.  <a href="#ae066828157a539ceab8d1c2e491073bd">More...</a><br /></td></tr>
+<tr class="separator:ae066828157a539ceab8d1c2e491073bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa54416d9aa58d310651f4cd7c6e071bb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#aa54416d9aa58d310651f4cd7c6e071bb">acceptColor</a> (const QColor &amp;color)</td></tr>
+<tr class="memdesc:aa54416d9aa58d310651f4cd7c6e071bb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Emmited when the colorSelected() signal from colorDialog is triggered.  <a href="#aa54416d9aa58d310651f4cd7c6e071bb">More...</a><br /></td></tr>
+<tr class="separator:aa54416d9aa58d310651f4cd7c6e071bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:a62cd8712fb41a754298f6f60eead2cb0"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a62cd8712fb41a754298f6f60eead2cb0"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#a62cd8712fb41a754298f6f60eead2cb0">createActions</a> ()</td></tr>
+<tr class="memdesc:a62cd8712fb41a754298f6f60eead2cb0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called in the constructor. <br /></td></tr>
+<tr class="separator:a62cd8712fb41a754298f6f60eead2cb0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeb57235ebc08860e680132db167c09b4"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aeb57235ebc08860e680132db167c09b4"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#aeb57235ebc08860e680132db167c09b4">createToolBar</a> ()</td></tr>
+<tr class="memdesc:aeb57235ebc08860e680132db167c09b4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called in the constructor. <br /></td></tr>
+<tr class="separator:aeb57235ebc08860e680132db167c09b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0ea51988f2a600d2268c5837e9524d5f"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a0ea51988f2a600d2268c5837e9524d5f"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#a0ea51988f2a600d2268c5837e9524d5f">createDockWidget</a> ()</td></tr>
+<tr class="memdesc:a0ea51988f2a600d2268c5837e9524d5f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called in the constructor. <br /></td></tr>
+<tr class="separator:a0ea51988f2a600d2268c5837e9524d5f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a87f94def1c8d92ef141ffb6a20cf3900"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a87f94def1c8d92ef141ffb6a20cf3900"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#a87f94def1c8d92ef141ffb6a20cf3900">createCentralWidget</a> ()</td></tr>
+<tr class="memdesc:a87f94def1c8d92ef141ffb6a20cf3900"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called in the constructor. <br /></td></tr>
+<tr class="separator:a87f94def1c8d92ef141ffb6a20cf3900"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a63c084d7cf85814fc8d880cd612015cb"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a63c084d7cf85814fc8d880cd612015cb"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#a63c084d7cf85814fc8d880cd612015cb">createPainterCursor</a> ()</td></tr>
+<tr class="memdesc:a63c084d7cf85814fc8d880cd612015cb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called in the constructor. <br /></td></tr>
+<tr class="separator:a63c084d7cf85814fc8d880cd612015cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:aee01240061a0ca10f2976a97a0b149bd"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aee01240061a0ca10f2976a97a0b149bd"></a>
+<a class="el" href="class_my_organization_dock_widget.html">MyOrganizationDockWidget</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>organizationDockWidget</b></td></tr>
+<tr class="separator:aee01240061a0ca10f2976a97a0b149bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9b2426acb3ca17d40cf8737232e2954d"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a9b2426acb3ca17d40cf8737232e2954d"></a>
+<a class="el" href="class_my_drop_graphics_scene.html">MyDropGraphicsScene</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>centralScene</b></td></tr>
+<tr class="separator:a9b2426acb3ca17d40cf8737232e2954d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7cadaf2fb139d350020b0a0e7fd9c8eb"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a7cadaf2fb139d350020b0a0e7fd9c8eb"></a>
+<a class="el" href="class_my_graphics_view.html">MyGraphicsView</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>centralView</b></td></tr>
+<tr class="separator:a7cadaf2fb139d350020b0a0e7fd9c8eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a10d2a8149dc4da0a7df5ee9e4e189721"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a10d2a8149dc4da0a7df5ee9e4e189721"></a>
+QToolBar *&#160;</td><td class="memItemRight" valign="bottom"><b>toolBar</b></td></tr>
+<tr class="separator:a10d2a8149dc4da0a7df5ee9e4e189721"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a840d28fd8f004fd5a1ea97dd7cbe7e50"><td class="memItemLeft" align="right" valign="top">QColorDialog *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#a840d28fd8f004fd5a1ea97dd7cbe7e50">colorDialog</a></td></tr>
+<tr class="memdesc:a840d28fd8f004fd5a1ea97dd7cbe7e50"><td class="mdescLeft">&#160;</td><td class="mdescRight">Color Dialog.  <a href="#a840d28fd8f004fd5a1ea97dd7cbe7e50">More...</a><br /></td></tr>
+<tr class="separator:a840d28fd8f004fd5a1ea97dd7cbe7e50"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ace14b6e7cbc0b167e0d3113050645f69"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ace14b6e7cbc0b167e0d3113050645f69"></a>
+QCursor&#160;</td><td class="memItemRight" valign="bottom"><b>painterCursor</b></td></tr>
+<tr class="separator:ace14b6e7cbc0b167e0d3113050645f69"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a09dfa34e541dff8ab1e4f29bfca76169"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#a09dfa34e541dff8ab1e4f29bfca76169">painterCursorActivated_</a></td></tr>
+<tr class="memdesc:a09dfa34e541dff8ab1e4f29bfca76169"><td class="mdescLeft">&#160;</td><td class="mdescRight">Used to verify if the painter cursor is activated.  <a href="#a09dfa34e541dff8ab1e4f29bfca76169">More...</a><br /></td></tr>
+<tr class="separator:a09dfa34e541dff8ab1e4f29bfca76169"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a95374ee491dceb4ee57e27afff60d56b"><td class="memItemLeft" align="right" valign="top">QAction *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#a95374ee491dceb4ee57e27afff60d56b">painterAction</a></td></tr>
+<tr class="memdesc:a95374ee491dceb4ee57e27afff60d56b"><td class="mdescLeft">&#160;</td><td class="mdescRight">When executed, prompts the color Dialog.  <a href="#a95374ee491dceb4ee57e27afff60d56b">More...</a><br /></td></tr>
+<tr class="separator:a95374ee491dceb4ee57e27afff60d56b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>This is the main window. </p>
+<p>This is the windows that will be showing all the time. contains the central widget, dock widget, actions, etc.. </p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="aa54416d9aa58d310651f4cd7c6e071bb"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MainWindow::acceptColor </td>
+          <td>(</td>
+          <td class="paramtype">const QColor &amp;&#160;</td>
+          <td class="paramname"><em>color</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Emmited when the colorSelected() signal from colorDialog is triggered. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">color</td><td>receives the color from the colorDialog. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a0f6f0466e2aca15edd6c820a686c6b57"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool MainWindow::painterCursorActivated </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Checks weather the painter Cursor is activated. </p>
+<p>Returns true if the color from the colorDialog was accepted, otherwise returns false </p>
+
+</div>
+</div>
+<a class="anchor" id="a8ccae81777f7010d6204509dc5fc111f"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MainWindow::painterToggled </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>toggled</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Emmited when the toggled(bool) signal from painterAction is triggered. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">toggled</td><td>receives the bool variable from toggled(bool) </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="ae066828157a539ceab8d1c2e491073bd"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MainWindow::rejectColor </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Emmited when the reject() signal from colorDialog is triggered. </p>
+<p>For now it only changes the cursor icon </p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a class="anchor" id="a840d28fd8f004fd5a1ea97dd7cbe7e50"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QColorDialog* MainWindow::colorDialog</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Color Dialog. </p>
+<p>colorDialog is initialized in the <a class="el" href="class_main_window.html#a62cd8712fb41a754298f6f60eead2cb0" title="Called in the constructor. ">createActions()</a> It is executed when the painterAction is toggled to true; </p>
+
+</div>
+</div>
+<a class="anchor" id="a95374ee491dceb4ee57e27afff60d56b"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QAction* MainWindow::painterAction</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>When executed, prompts the color Dialog. </p>
+<p>Initialized in <a class="el" href="class_main_window.html#a62cd8712fb41a754298f6f60eead2cb0" title="Called in the constructor. ">createActions()</a> </p>
+
+</div>
+</div>
+<a class="anchor" id="a09dfa34e541dff8ab1e4f29bfca76169"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool MainWindow::painterCursorActivated_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Used to verify if the painter cursor is activated. </p>
+<p>True if its activated, false otherwise. </p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li><a class="el" href="_main_window_8h_source.html">MainWindow.h</a></li>
 <li>MainWindow.cpp</li>
@@ -124,7 +385,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>resizeEvent</b> (QRes
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Aug 20 2015 00:10:48 for re:all Project by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Aug 20 2015 02:16:50 for re:all Project by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.9.1
 </small></address>

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['mousepressevent',['mousePressEvent',['../class_my_central_ellipse_item.html#ab1b7f9aec994268061b5a38d2cd5744d',1,'MyCentralEllipseItem']]]
+  ['getpaintercursor',['getPainterCursor',['../class_main_window.html#aa0e9c2933778a0a94a2d2010b28ee0f2',1,'MainWindow']]]
 ];

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['hovermoveevent',['hoverMoveEvent',['../class_my_central_ellipse_item.html#a0d465a1d4c907bda9d57b3a3207097a9',1,'MyCentralEllipseItem']]]
+  ['acceptcolor',['acceptColor',['../class_main_window.html#aa54416d9aa58d310651f4cd7c6e071bb',1,'MainWindow']]]
 ];

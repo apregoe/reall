@@ -8,7 +8,6 @@
 MainWindow::MainWindow(QWidget* parent) : QMainWindow(parent){
 	this->setWindowTitle("re:all - Interactive Infographic");
     QDesktopWidget dw;
-
     this->resize(dw.width()*0.65, dw.height()*0.65);
     painterCursorActivated_ = false;
     createActions();
@@ -16,24 +15,6 @@ MainWindow::MainWindow(QWidget* parent) : QMainWindow(parent){
     createCentralWidget();
     createPainterCursor();
     createDockWidget();
-    //MySimpleTextItem* textItem = new MySimpleTextItem("text Here");
-    //centralScene->addItem(textItem);
-    /*
-    for(int i = 0; i < 10; ++i){
-        int x = centralScene->sceneRect().width();
-        int y = centralScene->sceneRect().height();
-        QRectF r(QPointF(std::rand() % x ,std::rand() % y), QSizeF(40,40));
-        int j = std::rand() % 3;
-        if(j == 0){
-            centralScene->addItem(new MyCentralRectItem(r));
-        }else if (j ==1){
-            centralScene->addItem(new MyCentralRectRadiousItem(r));
-        }
-        else{
-            centralScene->addItem(new MyCentralEllipseItem(r));
-        }
-    }
-    centralScene->connect();*/
 }
 void MainWindow::createPainterCursor(){
     QPixmap pMap = QPixmap(":/images/brush.png");
@@ -104,13 +85,6 @@ void MainWindow::createCentralWidget(){
     centralScene->setSceneRect(this->rect());
 	this->setCentralWidget(centralView);
 }
-
-void MainWindow::resizeEvent(QResizeEvent * event){
-    centralView->setSceneRect(this->rect());
-    centralScene->setSceneRect(this->rect());
-    QMainWindow::resizeEvent(event);
-}
-
 
 
 

@@ -1,5 +1,14 @@
 \hypertarget{class_main_window}{}\section{Main\+Window Class Reference}
 \label{class_main_window}\index{Main\+Window@{Main\+Window}}
+
+
+This is the main window.  
+
+
+
+
+{\ttfamily \#include $<$Main\+Window.\+h$>$}
+
 Inheritance diagram for Main\+Window\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -12,21 +21,157 @@ Inheritance diagram for Main\+Window\+:\begin{figure}[H]
 \hypertarget{class_main_window_a8b244be8b7b7db1b08de2a2acb9409db}{}{\bfseries Main\+Window} (Q\+Widget $\ast$parent=0)\label{class_main_window_a8b244be8b7b7db1b08de2a2acb9409db}
 
 \item 
-\hypertarget{class_main_window_a0f6f0466e2aca15edd6c820a686c6b57}{}bool {\bfseries painter\+Cursor\+Activated} ()\label{class_main_window_a0f6f0466e2aca15edd6c820a686c6b57}
+bool \hyperlink{class_main_window_a0f6f0466e2aca15edd6c820a686c6b57}{painter\+Cursor\+Activated} ()
+\begin{DoxyCompactList}\small\item\em Checks weather the painter Cursor is activated. \end{DoxyCompactList}\item 
+\hypertarget{class_main_window_aa0e9c2933778a0a94a2d2010b28ee0f2}{}Q\+Cursor \hyperlink{class_main_window_aa0e9c2933778a0a94a2d2010b28ee0f2}{get\+Painter\+Cursor} ()\label{class_main_window_aa0e9c2933778a0a94a2d2010b28ee0f2}
 
-\item 
-\hypertarget{class_main_window_aa0e9c2933778a0a94a2d2010b28ee0f2}{}Q\+Cursor {\bfseries get\+Painter\+Cursor} ()\label{class_main_window_aa0e9c2933778a0a94a2d2010b28ee0f2}
-
-\end{DoxyCompactItemize}
-\subsection*{Protected Member Functions}
+\begin{DoxyCompactList}\small\item\em Returns the painter\+Cursor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hypertarget{class_main_window_ae12f8f63791595567b6250f8bb002bda}{}void {\bfseries resize\+Event} (Q\+Resize\+Event $\ast$event)\label{class_main_window_ae12f8f63791595567b6250f8bb002bda}
+\hypertarget{class_main_window_a7b3e2567ab0bf7dd1a3461d60eb45bf1}{}static Q\+Cursor {\bfseries get\+Painter\+Cursor} ()\label{class_main_window_a7b3e2567ab0bf7dd1a3461d60eb45bf1}
 
 \end{DoxyCompactItemize}
+\subsection*{Private Slots}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_main_window_a8ccae81777f7010d6204509dc5fc111f}{painter\+Toggled} (bool toggled)
+\begin{DoxyCompactList}\small\item\em Emmited when the toggled(bool) signal from painter\+Action is triggered. \end{DoxyCompactList}\item 
+void \hyperlink{class_main_window_ae066828157a539ceab8d1c2e491073bd}{reject\+Color} ()
+\begin{DoxyCompactList}\small\item\em Emmited when the reject() signal from color\+Dialog is triggered. \end{DoxyCompactList}\item 
+void \hyperlink{class_main_window_aa54416d9aa58d310651f4cd7c6e071bb}{accept\+Color} (const Q\+Color \&color)
+\begin{DoxyCompactList}\small\item\em Emmited when the color\+Selected() signal from color\+Dialog is triggered. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_main_window_a62cd8712fb41a754298f6f60eead2cb0}{}void \hyperlink{class_main_window_a62cd8712fb41a754298f6f60eead2cb0}{create\+Actions} ()\label{class_main_window_a62cd8712fb41a754298f6f60eead2cb0}
 
+\begin{DoxyCompactList}\small\item\em Called in the constructor. \end{DoxyCompactList}\item 
+\hypertarget{class_main_window_aeb57235ebc08860e680132db167c09b4}{}void \hyperlink{class_main_window_aeb57235ebc08860e680132db167c09b4}{create\+Tool\+Bar} ()\label{class_main_window_aeb57235ebc08860e680132db167c09b4}
+
+\begin{DoxyCompactList}\small\item\em Called in the constructor. \end{DoxyCompactList}\item 
+\hypertarget{class_main_window_a0ea51988f2a600d2268c5837e9524d5f}{}void \hyperlink{class_main_window_a0ea51988f2a600d2268c5837e9524d5f}{create\+Dock\+Widget} ()\label{class_main_window_a0ea51988f2a600d2268c5837e9524d5f}
+
+\begin{DoxyCompactList}\small\item\em Called in the constructor. \end{DoxyCompactList}\item 
+\hypertarget{class_main_window_a87f94def1c8d92ef141ffb6a20cf3900}{}void \hyperlink{class_main_window_a87f94def1c8d92ef141ffb6a20cf3900}{create\+Central\+Widget} ()\label{class_main_window_a87f94def1c8d92ef141ffb6a20cf3900}
+
+\begin{DoxyCompactList}\small\item\em Called in the constructor. \end{DoxyCompactList}\item 
+\hypertarget{class_main_window_a63c084d7cf85814fc8d880cd612015cb}{}void \hyperlink{class_main_window_a63c084d7cf85814fc8d880cd612015cb}{create\+Painter\+Cursor} ()\label{class_main_window_a63c084d7cf85814fc8d880cd612015cb}
+
+\begin{DoxyCompactList}\small\item\em Called in the constructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_main_window_aee01240061a0ca10f2976a97a0b149bd}{}\hyperlink{class_my_organization_dock_widget}{My\+Organization\+Dock\+Widget} $\ast$ {\bfseries organization\+Dock\+Widget}\label{class_main_window_aee01240061a0ca10f2976a97a0b149bd}
+
+\item 
+\hypertarget{class_main_window_a9b2426acb3ca17d40cf8737232e2954d}{}\hyperlink{class_my_drop_graphics_scene}{My\+Drop\+Graphics\+Scene} $\ast$ {\bfseries central\+Scene}\label{class_main_window_a9b2426acb3ca17d40cf8737232e2954d}
+
+\item 
+\hypertarget{class_main_window_a7cadaf2fb139d350020b0a0e7fd9c8eb}{}\hyperlink{class_my_graphics_view}{My\+Graphics\+View} $\ast$ {\bfseries central\+View}\label{class_main_window_a7cadaf2fb139d350020b0a0e7fd9c8eb}
+
+\item 
+\hypertarget{class_main_window_a10d2a8149dc4da0a7df5ee9e4e189721}{}Q\+Tool\+Bar $\ast$ {\bfseries tool\+Bar}\label{class_main_window_a10d2a8149dc4da0a7df5ee9e4e189721}
+
+\item 
+Q\+Color\+Dialog $\ast$ \hyperlink{class_main_window_a840d28fd8f004fd5a1ea97dd7cbe7e50}{color\+Dialog}
+\begin{DoxyCompactList}\small\item\em Color Dialog. \end{DoxyCompactList}\item 
+\hypertarget{class_main_window_ace14b6e7cbc0b167e0d3113050645f69}{}Q\+Cursor {\bfseries painter\+Cursor}\label{class_main_window_ace14b6e7cbc0b167e0d3113050645f69}
+
+\item 
+bool \hyperlink{class_main_window_a09dfa34e541dff8ab1e4f29bfca76169}{painter\+Cursor\+Activated\+\_\+}
+\begin{DoxyCompactList}\small\item\em Used to verify if the painter cursor is activated. \end{DoxyCompactList}\item 
+Q\+Action $\ast$ \hyperlink{class_main_window_a95374ee491dceb4ee57e27afff60d56b}{painter\+Action}
+\begin{DoxyCompactList}\small\item\em When executed, prompts the color Dialog. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This is the main window. 
+
+This is the windows that will be showing all the time. contains the central widget, dock widget, actions, etc.. 
+
+\subsection{Member Function Documentation}
+\hypertarget{class_main_window_aa54416d9aa58d310651f4cd7c6e071bb}{}\index{Main\+Window@{Main\+Window}!accept\+Color@{accept\+Color}}
+\index{accept\+Color@{accept\+Color}!Main\+Window@{Main\+Window}}
+\subsubsection[{accept\+Color}]{\setlength{\rightskip}{0pt plus 5cm}void Main\+Window\+::accept\+Color (
+\begin{DoxyParamCaption}
+\item[{const Q\+Color \&}]{color}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}\label{class_main_window_aa54416d9aa58d310651f4cd7c6e071bb}
+
+
+Emmited when the color\+Selected() signal from color\+Dialog is triggered. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em color} & receives the color from the color\+Dialog. \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_main_window_a0f6f0466e2aca15edd6c820a686c6b57}{}\index{Main\+Window@{Main\+Window}!painter\+Cursor\+Activated@{painter\+Cursor\+Activated}}
+\index{painter\+Cursor\+Activated@{painter\+Cursor\+Activated}!Main\+Window@{Main\+Window}}
+\subsubsection[{painter\+Cursor\+Activated}]{\setlength{\rightskip}{0pt plus 5cm}bool Main\+Window\+::painter\+Cursor\+Activated (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{class_main_window_a0f6f0466e2aca15edd6c820a686c6b57}
+
+
+Checks weather the painter Cursor is activated. 
+
+Returns true if the color from the color\+Dialog was accepted, otherwise returns false \hypertarget{class_main_window_a8ccae81777f7010d6204509dc5fc111f}{}\index{Main\+Window@{Main\+Window}!painter\+Toggled@{painter\+Toggled}}
+\index{painter\+Toggled@{painter\+Toggled}!Main\+Window@{Main\+Window}}
+\subsubsection[{painter\+Toggled}]{\setlength{\rightskip}{0pt plus 5cm}void Main\+Window\+::painter\+Toggled (
+\begin{DoxyParamCaption}
+\item[{bool}]{toggled}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}\label{class_main_window_a8ccae81777f7010d6204509dc5fc111f}
+
+
+Emmited when the toggled(bool) signal from painter\+Action is triggered. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em toggled} & receives the bool variable from toggled(bool) \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_main_window_ae066828157a539ceab8d1c2e491073bd}{}\index{Main\+Window@{Main\+Window}!reject\+Color@{reject\+Color}}
+\index{reject\+Color@{reject\+Color}!Main\+Window@{Main\+Window}}
+\subsubsection[{reject\+Color}]{\setlength{\rightskip}{0pt plus 5cm}void Main\+Window\+::reject\+Color (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}\label{class_main_window_ae066828157a539ceab8d1c2e491073bd}
+
+
+Emmited when the reject() signal from color\+Dialog is triggered. 
+
+For now it only changes the cursor icon 
+
+\subsection{Member Data Documentation}
+\hypertarget{class_main_window_a840d28fd8f004fd5a1ea97dd7cbe7e50}{}\index{Main\+Window@{Main\+Window}!color\+Dialog@{color\+Dialog}}
+\index{color\+Dialog@{color\+Dialog}!Main\+Window@{Main\+Window}}
+\subsubsection[{color\+Dialog}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Color\+Dialog$\ast$ Main\+Window\+::color\+Dialog\hspace{0.3cm}{\ttfamily [private]}}\label{class_main_window_a840d28fd8f004fd5a1ea97dd7cbe7e50}
+
+
+Color Dialog. 
+
+color\+Dialog is initialized in the \hyperlink{class_main_window_a62cd8712fb41a754298f6f60eead2cb0}{create\+Actions()} It is executed when the painter\+Action is toggled to true; \hypertarget{class_main_window_a95374ee491dceb4ee57e27afff60d56b}{}\index{Main\+Window@{Main\+Window}!painter\+Action@{painter\+Action}}
+\index{painter\+Action@{painter\+Action}!Main\+Window@{Main\+Window}}
+\subsubsection[{painter\+Action}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Action$\ast$ Main\+Window\+::painter\+Action\hspace{0.3cm}{\ttfamily [private]}}\label{class_main_window_a95374ee491dceb4ee57e27afff60d56b}
+
+
+When executed, prompts the color Dialog. 
+
+Initialized in \hyperlink{class_main_window_a62cd8712fb41a754298f6f60eead2cb0}{create\+Actions()} \hypertarget{class_main_window_a09dfa34e541dff8ab1e4f29bfca76169}{}\index{Main\+Window@{Main\+Window}!painter\+Cursor\+Activated\+\_\+@{painter\+Cursor\+Activated\+\_\+}}
+\index{painter\+Cursor\+Activated\+\_\+@{painter\+Cursor\+Activated\+\_\+}!Main\+Window@{Main\+Window}}
+\subsubsection[{painter\+Cursor\+Activated\+\_\+}]{\setlength{\rightskip}{0pt plus 5cm}bool Main\+Window\+::painter\+Cursor\+Activated\+\_\+\hspace{0.3cm}{\ttfamily [private]}}\label{class_main_window_a09dfa34e541dff8ab1e4f29bfca76169}
+
+
+Used to verify if the painter cursor is activated. 
+
+True if its activated, false otherwise. 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-Main\+Window.\+h\item 
+\hyperlink{_main_window_8h}{Main\+Window.\+h}\item 
 Main\+Window.\+cpp\end{DoxyCompactItemize}
