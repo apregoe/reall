@@ -1,0 +1,87 @@
+\hypertarget{class_my_central_ellipse_item}{}\section{My\+Central\+Ellipse\+Item Class Reference}
+\label{class_my_central_ellipse_item}\index{My\+Central\+Ellipse\+Item@{My\+Central\+Ellipse\+Item}}
+Inheritance diagram for My\+Central\+Ellipse\+Item\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_my_central_ellipse_item}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_my_central_ellipse_item_ac912023a16f5f6e6331b1fe861ca42d2}{}{\bfseries My\+Central\+Ellipse\+Item} (const Q\+Rect\+F \&rect, Q\+Graphics\+Item $\ast$parent=0)\label{class_my_central_ellipse_item_ac912023a16f5f6e6331b1fe861ca42d2}
+
+\item 
+void \hyperlink{class_my_central_ellipse_item_aa3ae037258cf9839002f8da7e83c3239}{paint} (Q\+Painter $\ast$painter, const Q\+Style\+Option\+Graphics\+Item $\ast$option, Q\+Widget $\ast$widget=0)
+\item 
+int \hyperlink{class_my_central_ellipse_item_a94c23343867dce46a608582dfe01fffb}{type} () const 
+\item 
+Q\+Painter\+Path \hyperlink{class_my_central_ellipse_item_a075835bf21a3d95317ece40e9ca3da7c}{shape} () const 
+\item 
+Q\+Rect\+F \hyperlink{class_my_central_ellipse_item_a97f879a0bb7cfa7270f33c3d77d5b7a0}{inner\+Rect} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_my_central_ellipse_item_ab1b7f9aec994268061b5a38d2cd5744d}{mouse\+Press\+Event} (Q\+Graphics\+Scene\+Mouse\+Event $\ast$event)
+\item 
+void \hyperlink{class_my_central_ellipse_item_a0d465a1d4c907bda9d57b3a3207097a9}{hover\+Move\+Event} (Q\+Graphics\+Scene\+Hover\+Event $\ast$event)
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_my_central_ellipse_item_a0d465a1d4c907bda9d57b3a3207097a9}{}\index{My\+Central\+Ellipse\+Item@{My\+Central\+Ellipse\+Item}!hover\+Move\+Event@{hover\+Move\+Event}}
+\index{hover\+Move\+Event@{hover\+Move\+Event}!My\+Central\+Ellipse\+Item@{My\+Central\+Ellipse\+Item}}
+\subsubsection[{hover\+Move\+Event}]{\setlength{\rightskip}{0pt plus 5cm}void My\+Central\+Ellipse\+Item\+::hover\+Move\+Event (
+\begin{DoxyParamCaption}
+\item[{Q\+Graphics\+Scene\+Hover\+Event $\ast$}]{event}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\label{class_my_central_ellipse_item_a0d465a1d4c907bda9d57b3a3207097a9}
+The Hover event has to be used since, instead of the boundingrect corners of the ellipse, we will use the inner rect corners to resize de ellipse. So that when the user hovers over the inner conners the current cursor changes the shape indicating that he can press and resize the ellipse \hypertarget{class_my_central_ellipse_item_a97f879a0bb7cfa7270f33c3d77d5b7a0}{}\index{My\+Central\+Ellipse\+Item@{My\+Central\+Ellipse\+Item}!inner\+Rect@{inner\+Rect}}
+\index{inner\+Rect@{inner\+Rect}!My\+Central\+Ellipse\+Item@{My\+Central\+Ellipse\+Item}}
+\subsubsection[{inner\+Rect}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Rect\+F My\+Central\+Ellipse\+Item\+::inner\+Rect (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_my_central_ellipse_item_a97f879a0bb7cfa7270f33c3d77d5b7a0}
+\hyperlink{class_my_central_ellipse_item_a97f879a0bb7cfa7270f33c3d77d5b7a0}{inner\+Rect()} is used to return the inner rectangle in the ellipse. \hypertarget{class_my_central_ellipse_item_ab1b7f9aec994268061b5a38d2cd5744d}{}\index{My\+Central\+Ellipse\+Item@{My\+Central\+Ellipse\+Item}!mouse\+Press\+Event@{mouse\+Press\+Event}}
+\index{mouse\+Press\+Event@{mouse\+Press\+Event}!My\+Central\+Ellipse\+Item@{My\+Central\+Ellipse\+Item}}
+\subsubsection[{mouse\+Press\+Event}]{\setlength{\rightskip}{0pt plus 5cm}void My\+Central\+Ellipse\+Item\+::mouse\+Press\+Event (
+\begin{DoxyParamCaption}
+\item[{Q\+Graphics\+Scene\+Mouse\+Event $\ast$}]{event}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\label{class_my_central_ellipse_item_ab1b7f9aec994268061b5a38d2cd5744d}
+Enum type value 1 \hypertarget{class_my_central_ellipse_item_aa3ae037258cf9839002f8da7e83c3239}{}\index{My\+Central\+Ellipse\+Item@{My\+Central\+Ellipse\+Item}!paint@{paint}}
+\index{paint@{paint}!My\+Central\+Ellipse\+Item@{My\+Central\+Ellipse\+Item}}
+\subsubsection[{paint}]{\setlength{\rightskip}{0pt plus 5cm}void My\+Central\+Ellipse\+Item\+::paint (
+\begin{DoxyParamCaption}
+\item[{Q\+Painter $\ast$}]{painter, }
+\item[{const Q\+Style\+Option\+Graphics\+Item $\ast$}]{option, }
+\item[{Q\+Widget $\ast$}]{widget = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)}\label{class_my_central_ellipse_item_aa3ae037258cf9839002f8da7e83c3239}
+\hyperlink{class_my_central_ellipse_item_aa3ae037258cf9839002f8da7e83c3239}{paint()} is called whenever there is a change in this Item (resize, move, etc) \hyperlink{class_my_central_ellipse_item_aa3ae037258cf9839002f8da7e83c3239}{paint()} is used to draw the ellipse on the bounding\+Rect() \hypertarget{class_my_central_ellipse_item_a075835bf21a3d95317ece40e9ca3da7c}{}\index{My\+Central\+Ellipse\+Item@{My\+Central\+Ellipse\+Item}!shape@{shape}}
+\index{shape@{shape}!My\+Central\+Ellipse\+Item@{My\+Central\+Ellipse\+Item}}
+\subsubsection[{shape}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Painter\+Path My\+Central\+Ellipse\+Item\+::shape (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{class_my_central_ellipse_item_a075835bf21a3d95317ece40e9ca3da7c}
+\hyperlink{class_my_central_ellipse_item_a075835bf21a3d95317ece40e9ca3da7c}{shape()} was supposed to be used to get the intersection point with the line that was connecting this Item, but isnt really used since I couldnt move the beginning point of the line to the porder of the ellipse, so I had to paint the background with white. Setting the Z value of the line lower than the z value of this item \hypertarget{class_my_central_ellipse_item_a94c23343867dce46a608582dfe01fffb}{}\index{My\+Central\+Ellipse\+Item@{My\+Central\+Ellipse\+Item}!type@{type}}
+\index{type@{type}!My\+Central\+Ellipse\+Item@{My\+Central\+Ellipse\+Item}}
+\subsubsection[{type}]{\setlength{\rightskip}{0pt plus 5cm}int My\+Central\+Ellipse\+Item\+::type (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\label{class_my_central_ellipse_item_a94c23343867dce46a608582dfe01fffb}
+\hyperlink{class_my_central_ellipse_item_a94c23343867dce46a608582dfe01fffb}{type()} will be used to get the type of item I am dropping into \hyperlink{class_my_drop_graphics_scene}{My\+Drop\+Graphics\+Scene} or in some other ocassions when you dont know which item is which 
+
+Implements \hyperlink{class_my_central_graphics_item}{My\+Central\+Graphics\+Item}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+My\+Central\+Ellipse\+Item.\+h\item 
+My\+Central\+Ellipse\+Item.\+cpp\end{DoxyCompactItemize}
