@@ -93,16 +93,17 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;    <a class="code" href="class_my_simple_text_item.html">MySimpleTextItem</a>(<span class="keyword">const</span> QString &amp; text, QGraphicsItem * parent = 0);</div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;    <span class="comment">//type() will be used to sens the type of item I am dropping into MyDropGraphicsScene</span></div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    <span class="keywordtype">int</span> type()<span class="keyword"> const</span>{<span class="keywordflow">return</span> Type;}</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    <span class="keyword">enum</span> { Type = 5 };</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;};</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    <span class="keywordtype">void</span> paint(QPainter *painter, <span class="keyword">const</span> QStyleOptionGraphicsItem *option, QWidget *widget);</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    <span class="keyword">enum</span> { Type = 5 };</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;};</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="ttc" id="class_my_simple_text_item_html"><div class="ttname"><a href="class_my_simple_text_item.html">MySimpleTextItem</a></div><div class="ttdef"><b>Definition:</b> MySimpleTextItem.h:5</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Aug 20 2015 13:55:53 for re:all Project by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Aug 20 2015 17:11:34 for re:all Project by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.9.1
 </small></address>

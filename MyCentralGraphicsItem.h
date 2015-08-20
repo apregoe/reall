@@ -10,10 +10,6 @@ public:
 	void paint(QPainter * painter, const QStyleOptionGraphicsItem * option,
 		QWidget * widget = 0);
 	QRectF boundingRect() const;
-	QPointF * up() {return &pUp;}
-	QPointF * down() {return &pDown;}
-	QPointF * right() {return &pRight;}
-	QPointF * left() {return &pLeft;}
 	double topRightAngle();
 	double topLeftAngle();
 	double bottomRightAngle();
@@ -28,7 +24,6 @@ protected:
 	bool verifyCorner(const QPointF & p1,const QPointF & p2);
 	int resizeMode() const{return rMode;}
 	void setResizeMode(int i){rMode = i;}
-	void updateConnectingPoints();
 	QPen* pen;
 private:
 	void connectScene();

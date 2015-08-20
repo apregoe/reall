@@ -16,7 +16,6 @@ void MyCentralRectRadiousItem::paint(QPainter * painter,
 	QBrush brush(Qt::white);
 	painter->setBrush(brush);
 	painter->drawRoundedRect(boundingRect(), 45,45,Qt::RelativeSize);
-	MyCentralGraphicsItem::updateConnectingPoints();
 	MyCentralGraphicsItem::paint(painter, option, widget);
 }
 

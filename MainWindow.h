@@ -24,7 +24,6 @@ public:
 	bool painterCursorActivated(){return painterCursorActivated_;}
 	//!Returns the painterCursor
 	QCursor getPainterCursor(){return painterCursor;}
-	static QCursor getPainterCursor(){return painterCursor;}
 private slots:
 	//! Emmited when the toggled(bool) signal from painterAction is triggered 
 	/*!

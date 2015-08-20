@@ -11,8 +11,6 @@ void MyRectRadiousItem::paint(QPainter * painter,
 	Q_UNUSED(widget);
 	QPen pen(Qt::black, 1.5);
 	painter->setPen(pen);
-	QBrush brush(Qt::white);
-	painter->setBrush(brush);
 	painter->setRenderHint(QPainter::Antialiasing);
 	painter->drawRoundedRect(boundingRect(), 15,15,Qt::RelativeSize);
 }

@@ -7,8 +7,6 @@ class MyGraphicsView : public QGraphicsView{
 Q_OBJECT
 public:
 	MyGraphicsView(MyDropGraphicsScene * scene, QWidget * parent = 0);
-private slots:
-	void selectionChanged();
 private:
 	MyDropGraphicsScene* Scene;
 protected:

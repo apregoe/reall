@@ -14,7 +14,6 @@ void MyCentralRectItem::paint(QPainter * painter,
 	painter->setPen(*(MyCentralGraphicsItem::pen));
 	painter->setRenderHint(QPainter::Antialiasing);
 	painter->drawRect(boundingRect());
-	MyCentralGraphicsItem::updateConnectingPoints();
 	MyCentralGraphicsItem::paint(painter, option, widget);
 }
 void MyCentralRectItem::mousePressEvent(QGraphicsSceneMouseEvent * event){

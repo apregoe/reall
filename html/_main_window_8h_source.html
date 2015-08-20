@@ -99,61 +99,60 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;</div>
 <div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="class_main_window.html#a0f6f0466e2aca15edd6c820a686c6b57">   24</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_main_window.html#a0f6f0466e2aca15edd6c820a686c6b57">painterCursorActivated</a>(){<span class="keywordflow">return</span> <a class="code" href="class_main_window.html#a09dfa34e541dff8ab1e4f29bfca76169">painterCursorActivated_</a>;}</div>
 <div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="class_main_window.html#aa0e9c2933778a0a94a2d2010b28ee0f2">   26</a></span>&#160;    QCursor <a class="code" href="class_main_window.html#aa0e9c2933778a0a94a2d2010b28ee0f2">getPainterCursor</a>(){<span class="keywordflow">return</span> painterCursor;}</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keyword">static</span> QCursor <a class="code" href="class_main_window.html#aa0e9c2933778a0a94a2d2010b28ee0f2">getPainterCursor</a>(){<span class="keywordflow">return</span> painterCursor;}</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="keyword">private</span> slots:</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_main_window.html#a8ccae81777f7010d6204509dc5fc111f">painterToggled</a>(<span class="keywordtype">bool</span> toggled);</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_main_window.html#ae066828157a539ceab8d1c2e491073bd">rejectColor</a>();</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_main_window.html#aa54416d9aa58d310651f4cd7c6e071bb">acceptColor</a>(<span class="keyword">const</span> QColor &amp; color);</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="comment">/*</span></div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="comment">     *Initialize the actions, so far there is onlt painterAction, but</span></div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="comment">     *save, open, new, etc. actions can be created in the future.</span></div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="comment">     *</span></div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="comment">     *It also initializes the colorDialog</span></div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="comment">     */</span></div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_main_window.html#a62cd8712fb41a754298f6f60eead2cb0">createActions</a>();</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="comment">/*</span></div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="comment">     * Initializes toolBar and adds it to the MainWindow</span></div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="comment">     */</span></div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_main_window.html#aeb57235ebc08860e680132db167c09b4">createToolBar</a>();</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="comment">/*</span></div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="comment">     *Initializes organizationDockWidget and adds it to the MainWindow</span></div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="comment">     */</span></div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_main_window.html#a0ea51988f2a600d2268c5837e9524d5f">createDockWidget</a>();</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <span class="comment">/*</span></div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="comment">     *Initializes organizationDockWidget and adds it to the MainWindow</span></div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="comment">     */</span></div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_main_window.html#a87f94def1c8d92ef141ffb6a20cf3900">createCentralWidget</a>();</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="comment">/*</span></div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="comment">     *Only initialized the painterCursor</span></div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="comment">     */</span></div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_main_window.html#a63c084d7cf85814fc8d880cd612015cb">createPainterCursor</a>();</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <a class="code" href="class_my_organization_dock_widget.html">MyOrganizationDockWidget</a>* organizationDockWidget;</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <a class="code" href="class_my_drop_graphics_scene.html">MyDropGraphicsScene</a>* centralScene;</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <a class="code" href="class_my_graphics_view.html">MyGraphicsView</a>* centralView;</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    QToolBar* toolBar;</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;</div>
-<div class="line"><a name="l00084"></a><span class="lineno"><a class="line" href="class_main_window.html#a840d28fd8f004fd5a1ea97dd7cbe7e50">   84</a></span>&#160;    QColorDialog* <a class="code" href="class_main_window.html#a840d28fd8f004fd5a1ea97dd7cbe7e50">colorDialog</a>; </div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    QCursor painterCursor;</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;</div>
-<div class="line"><a name="l00090"></a><span class="lineno"><a class="line" href="class_main_window.html#a09dfa34e541dff8ab1e4f29bfca76169">   90</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_main_window.html#a09dfa34e541dff8ab1e4f29bfca76169">painterCursorActivated_</a>; </div>
-<div class="line"><a name="l00095"></a><span class="lineno"><a class="line" href="class_main_window.html#a95374ee491dceb4ee57e27afff60d56b">   95</a></span>&#160;    QAction* <a class="code" href="class_main_window.html#a95374ee491dceb4ee57e27afff60d56b">painterAction</a>;</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;};</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="keyword">private</span> slots:</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_main_window.html#a8ccae81777f7010d6204509dc5fc111f">painterToggled</a>(<span class="keywordtype">bool</span> toggled);</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_main_window.html#ae066828157a539ceab8d1c2e491073bd">rejectColor</a>();</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_main_window.html#aa54416d9aa58d310651f4cd7c6e071bb">acceptColor</a>(<span class="keyword">const</span> QColor &amp; color);</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="comment">/*</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="comment">     *Initialize the actions, so far there is onlt painterAction, but</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="comment">     *save, open, new, etc. actions can be created in the future.</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="comment">     *</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="comment">     *It also initializes the colorDialog</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="comment">     */</span></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_main_window.html#a62cd8712fb41a754298f6f60eead2cb0">createActions</a>();</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="comment">/*</span></div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="comment">     * Initializes toolBar and adds it to the MainWindow</span></div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="comment">     */</span></div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_main_window.html#aeb57235ebc08860e680132db167c09b4">createToolBar</a>();</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="comment">/*</span></div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="comment">     *Initializes organizationDockWidget and adds it to the MainWindow</span></div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="comment">     */</span></div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_main_window.html#a0ea51988f2a600d2268c5837e9524d5f">createDockWidget</a>();</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="comment">/*</span></div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="comment">     *Initializes organizationDockWidget and adds it to the MainWindow</span></div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="comment">     */</span></div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_main_window.html#a87f94def1c8d92ef141ffb6a20cf3900">createCentralWidget</a>();</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="comment">/*</span></div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="comment">     *Only initialized the painterCursor</span></div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="comment">     */</span></div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_main_window.html#a63c084d7cf85814fc8d880cd612015cb">createPainterCursor</a>();</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <a class="code" href="class_my_organization_dock_widget.html">MyOrganizationDockWidget</a>* organizationDockWidget;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <a class="code" href="class_my_drop_graphics_scene.html">MyDropGraphicsScene</a>* centralScene;</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <a class="code" href="class_my_graphics_view.html">MyGraphicsView</a>* centralView;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    QToolBar* toolBar;</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;</div>
+<div class="line"><a name="l00083"></a><span class="lineno"><a class="line" href="class_main_window.html#a840d28fd8f004fd5a1ea97dd7cbe7e50">   83</a></span>&#160;    QColorDialog* <a class="code" href="class_main_window.html#a840d28fd8f004fd5a1ea97dd7cbe7e50">colorDialog</a>; </div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    QCursor painterCursor;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;</div>
+<div class="line"><a name="l00089"></a><span class="lineno"><a class="line" href="class_main_window.html#a09dfa34e541dff8ab1e4f29bfca76169">   89</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_main_window.html#a09dfa34e541dff8ab1e4f29bfca76169">painterCursorActivated_</a>; </div>
+<div class="line"><a name="l00094"></a><span class="lineno"><a class="line" href="class_main_window.html#a95374ee491dceb4ee57e27afff60d56b">   94</a></span>&#160;    QAction* <a class="code" href="class_main_window.html#a95374ee491dceb4ee57e27afff60d56b">painterAction</a>;</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;};</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="ttc" id="class_main_window_html_a8ccae81777f7010d6204509dc5fc111f"><div class="ttname"><a href="class_main_window.html#a8ccae81777f7010d6204509dc5fc111f">MainWindow::painterToggled</a></div><div class="ttdeci">void painterToggled(bool toggled)</div><div class="ttdoc">Emmited when the toggled(bool) signal from painterAction is triggered. </div><div class="ttdef"><b>Definition:</b> MainWindow.cpp:51</div></div>
 <div class="ttc" id="class_my_drop_graphics_scene_html"><div class="ttname"><a href="class_my_drop_graphics_scene.html">MyDropGraphicsScene</a></div><div class="ttdef"><b>Definition:</b> MyDropGraphicsScene.h:8</div></div>
 <div class="ttc" id="class_main_window_html_aa54416d9aa58d310651f4cd7c6e071bb"><div class="ttname"><a href="class_main_window.html#aa54416d9aa58d310651f4cd7c6e071bb">MainWindow::acceptColor</a></div><div class="ttdeci">void acceptColor(const QColor &amp;color)</div><div class="ttdoc">Emmited when the colorSelected() signal from colorDialog is triggered. </div><div class="ttdef"><b>Definition:</b> MainWindow.cpp:42</div></div>
 <div class="ttc" id="class_main_window_html_aa0e9c2933778a0a94a2d2010b28ee0f2"><div class="ttname"><a href="class_main_window.html#aa0e9c2933778a0a94a2d2010b28ee0f2">MainWindow::getPainterCursor</a></div><div class="ttdeci">QCursor getPainterCursor()</div><div class="ttdoc">Returns the painterCursor. </div><div class="ttdef"><b>Definition:</b> MainWindow.h:26</div></div>
 <div class="ttc" id="class_main_window_html_a62cd8712fb41a754298f6f60eead2cb0"><div class="ttname"><a href="class_main_window.html#a62cd8712fb41a754298f6f60eead2cb0">MainWindow::createActions</a></div><div class="ttdeci">void createActions()</div><div class="ttdoc">Called in the constructor. </div><div class="ttdef"><b>Definition:</b> MainWindow.cpp:25</div></div>
-<div class="ttc" id="class_main_window_html_a09dfa34e541dff8ab1e4f29bfca76169"><div class="ttname"><a href="class_main_window.html#a09dfa34e541dff8ab1e4f29bfca76169">MainWindow::painterCursorActivated_</a></div><div class="ttdeci">bool painterCursorActivated_</div><div class="ttdoc">Used to verify if the painter cursor is activated. </div><div class="ttdef"><b>Definition:</b> MainWindow.h:90</div></div>
-<div class="ttc" id="class_main_window_html_a95374ee491dceb4ee57e27afff60d56b"><div class="ttname"><a href="class_main_window.html#a95374ee491dceb4ee57e27afff60d56b">MainWindow::painterAction</a></div><div class="ttdeci">QAction * painterAction</div><div class="ttdoc">When executed, prompts the color Dialog. </div><div class="ttdef"><b>Definition:</b> MainWindow.h:95</div></div>
+<div class="ttc" id="class_main_window_html_a09dfa34e541dff8ab1e4f29bfca76169"><div class="ttname"><a href="class_main_window.html#a09dfa34e541dff8ab1e4f29bfca76169">MainWindow::painterCursorActivated_</a></div><div class="ttdeci">bool painterCursorActivated_</div><div class="ttdoc">Used to verify if the painter cursor is activated. </div><div class="ttdef"><b>Definition:</b> MainWindow.h:89</div></div>
+<div class="ttc" id="class_main_window_html_a95374ee491dceb4ee57e27afff60d56b"><div class="ttname"><a href="class_main_window.html#a95374ee491dceb4ee57e27afff60d56b">MainWindow::painterAction</a></div><div class="ttdeci">QAction * painterAction</div><div class="ttdoc">When executed, prompts the color Dialog. </div><div class="ttdef"><b>Definition:</b> MainWindow.h:94</div></div>
 <div class="ttc" id="class_main_window_html_a87f94def1c8d92ef141ffb6a20cf3900"><div class="ttname"><a href="class_main_window.html#a87f94def1c8d92ef141ffb6a20cf3900">MainWindow::createCentralWidget</a></div><div class="ttdeci">void createCentralWidget()</div><div class="ttdoc">Called in the constructor. </div><div class="ttdef"><b>Definition:</b> MainWindow.cpp:79</div></div>
-<div class="ttc" id="class_main_window_html_a840d28fd8f004fd5a1ea97dd7cbe7e50"><div class="ttname"><a href="class_main_window.html#a840d28fd8f004fd5a1ea97dd7cbe7e50">MainWindow::colorDialog</a></div><div class="ttdeci">QColorDialog * colorDialog</div><div class="ttdoc">Color Dialog. </div><div class="ttdef"><b>Definition:</b> MainWindow.h:84</div></div>
+<div class="ttc" id="class_main_window_html_a840d28fd8f004fd5a1ea97dd7cbe7e50"><div class="ttname"><a href="class_main_window.html#a840d28fd8f004fd5a1ea97dd7cbe7e50">MainWindow::colorDialog</a></div><div class="ttdeci">QColorDialog * colorDialog</div><div class="ttdoc">Color Dialog. </div><div class="ttdef"><b>Definition:</b> MainWindow.h:83</div></div>
 <div class="ttc" id="class_my_graphics_view_html"><div class="ttname"><a href="class_my_graphics_view.html">MyGraphicsView</a></div><div class="ttdef"><b>Definition:</b> MyGraphicsView.h:6</div></div>
 <div class="ttc" id="class_main_window_html_a0ea51988f2a600d2268c5837e9524d5f"><div class="ttname"><a href="class_main_window.html#a0ea51988f2a600d2268c5837e9524d5f">MainWindow::createDockWidget</a></div><div class="ttdeci">void createDockWidget()</div><div class="ttdoc">Called in the constructor. </div><div class="ttdef"><b>Definition:</b> MainWindow.cpp:73</div></div>
 <div class="ttc" id="class_main_window_html_ae066828157a539ceab8d1c2e491073bd"><div class="ttname"><a href="class_main_window.html#ae066828157a539ceab8d1c2e491073bd">MainWindow::rejectColor</a></div><div class="ttdeci">void rejectColor()</div><div class="ttdoc">Emmited when the reject() signal from colorDialog is triggered. </div><div class="ttdef"><b>Definition:</b> MainWindow.cpp:36</div></div>
@@ -165,7 +164,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Aug 20 2015 13:55:53 for re:all Project by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Aug 20 2015 17:11:34 for re:all Project by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.9.1
 </small></address>

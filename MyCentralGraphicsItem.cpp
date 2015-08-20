@@ -11,7 +11,6 @@ MyCentralGraphicsItem::MyCentralGraphicsItem(const QRectF & rect, QGraphicsItem 
     pen = new QPen(Qt::black,3);
     painterCursor = QCursor(pMap.scaled(QSize(14,14)), Qt::IgnoreAspectRatio);
 	this->rect = rect;
-	updateConnectingPoints();
 }
 void MyCentralGraphicsItem::paint(QPainter * painter, const QStyleOptionGraphicsItem * option,
 		QWidget * widget){
@@ -171,20 +170,10 @@ void MyCentralGraphicsItem::mouseMoveEvent(QGraphicsSceneMouseEvent * event){
 			update(boundingRect());
 		}
 		connectScene();
-		MyCentralGraphicsItem::updateConnectingPoints();
 		return;
 	}
 	connectScene();
-	MyCentralGraphicsItem::updateConnectingPoints();
 	QAbstractGraphicsShapeItem::mouseMoveEvent(event);
-}
-
-
-void MyCentralGraphicsItem::updateConnectingPoints(){
-	pUp = QPointF((rect.topLeft().x()+rect.topRight().x())/2, rect.topLeft().y());
-	pDown = QPointF((rect.bottomLeft().x()+rect.bottomRight().x())/2, rect.topLeft().y());
-	pRight = QPointF(rect.topLeft().x(), (rect.topRight().y()+rect.bottomRight().y())/2);
-	pLeft = QPointF(rect.topLeft().x(), (rect.topLeft().y()+rect.bottomLeft().y())/2);
 }
 
 
