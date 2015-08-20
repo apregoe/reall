@@ -2,5 +2,8 @@
 
 -	**Alberto Prego**
 
-***To run:***
--	****$ make****
+## To compile:
+-	$make
+
+## To run:
+-	./reall
