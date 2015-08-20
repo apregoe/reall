@@ -13,7 +13,7 @@ Inheritance diagram for My\+Central\+Ellipse\+Item\+:\begin{figure}[H]
 
 \item 
 void \hyperlink{class_my_central_ellipse_item_aa3ae037258cf9839002f8da7e83c3239}{paint} (Q\+Painter $\ast$painter, const Q\+Style\+Option\+Graphics\+Item $\ast$option, Q\+Widget $\ast$widget=0)
-\item 
+\begin{DoxyCompactList}\small\item\em Inherits from \hyperlink{class_my_central_graphics_item}{My\+Central\+Graphics\+Item} to draw the shape of the item. \end{DoxyCompactList}\item 
 int \hyperlink{class_my_central_ellipse_item_a94c23343867dce46a608582dfe01fffb}{type} () const 
 \item 
 Q\+Painter\+Path \hyperlink{class_my_central_ellipse_item_a075835bf21a3d95317ece40e9ca3da7c}{shape} () const 
@@ -24,7 +24,7 @@ Q\+Rect\+F \hyperlink{class_my_central_ellipse_item_a97f879a0bb7cfa7270f33c3d77d
 \begin{DoxyCompactItemize}
 \item 
 void \hyperlink{class_my_central_ellipse_item_ab1b7f9aec994268061b5a38d2cd5744d}{mouse\+Press\+Event} (Q\+Graphics\+Scene\+Mouse\+Event $\ast$event)
-\item 
+\begin{DoxyCompactList}\small\item\em called whenever this item is clicked, inherits from \hyperlink{class_my_central_graphics_item}{My\+Central\+Graphics\+Item} \end{DoxyCompactList}\item 
 void \hyperlink{class_my_central_ellipse_item_a0d465a1d4c907bda9d57b3a3207097a9}{hover\+Move\+Event} (Q\+Graphics\+Scene\+Hover\+Event $\ast$event)
 \end{DoxyCompactItemize}
 \subsection*{Private Types}
@@ -33,7 +33,7 @@ void \hyperlink{class_my_central_ellipse_item_a0d465a1d4c907bda9d57b3a3207097a9}
 \hypertarget{class_my_central_ellipse_item_a275b0e7f1c7dd42d1601f29dcaf17ae5}{}enum \{ {\bfseries Type} = 4
  \}\label{class_my_central_ellipse_item_a275b0e7f1c7dd42d1601f29dcaf17ae5}
 
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Enum type value 4. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Additional Inherited Members}
 
 
@@ -59,7 +59,18 @@ The Hover event has to be used since, instead of the boundingrect corners of the
 \item[{Q\+Graphics\+Scene\+Mouse\+Event $\ast$}]{event}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [protected]}}\label{class_my_central_ellipse_item_ab1b7f9aec994268061b5a38d2cd5744d}
-Enum type value 1 \hypertarget{class_my_central_ellipse_item_aa3ae037258cf9839002f8da7e83c3239}{}\index{My\+Central\+Ellipse\+Item@{My\+Central\+Ellipse\+Item}!paint@{paint}}
+
+
+called whenever this item is clicked, inherits from \hyperlink{class_my_central_graphics_item}{My\+Central\+Graphics\+Item} 
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & used to get the position of the cursor when this function is called \\
+\hline
+\end{DoxyParams}
+If the painter\+Cursor is activated, then this item color should be changed.
+
+This part is different from My\+Central\+Graphics\+Item\+::mouse\+Press\+Event() since I have to use the inner rectangle, instead of the bounding rectangle check \hyperlink{class_my_central_ellipse_item_ab1b7f9aec994268061b5a38d2cd5744d}{mouse\+Press\+Event()} in My\+Central\+Graphics\+Item.\+cpp to see the difference in the following if statements\hypertarget{class_my_central_ellipse_item_aa3ae037258cf9839002f8da7e83c3239}{}\index{My\+Central\+Ellipse\+Item@{My\+Central\+Ellipse\+Item}!paint@{paint}}
 \index{paint@{paint}!My\+Central\+Ellipse\+Item@{My\+Central\+Ellipse\+Item}}
 \subsubsection[{paint}]{\setlength{\rightskip}{0pt plus 5cm}void My\+Central\+Ellipse\+Item\+::paint (
 \begin{DoxyParamCaption}
@@ -68,7 +79,11 @@ Enum type value 1 \hypertarget{class_my_central_ellipse_item_aa3ae037258cf983900
 \item[{Q\+Widget $\ast$}]{widget = {\ttfamily 0}}
 \end{DoxyParamCaption}
 )}\label{class_my_central_ellipse_item_aa3ae037258cf9839002f8da7e83c3239}
-\hyperlink{class_my_central_ellipse_item_aa3ae037258cf9839002f8da7e83c3239}{paint()} is called whenever there is a change in this Item (resize, move, etc) \hyperlink{class_my_central_ellipse_item_aa3ae037258cf9839002f8da7e83c3239}{paint()} is used to draw the ellipse on the bounding\+Rect() \hypertarget{class_my_central_ellipse_item_a075835bf21a3d95317ece40e9ca3da7c}{}\index{My\+Central\+Ellipse\+Item@{My\+Central\+Ellipse\+Item}!shape@{shape}}
+
+
+Inherits from \hyperlink{class_my_central_graphics_item}{My\+Central\+Graphics\+Item} to draw the shape of the item. 
+
+Called whenever there is a change in this Item (resize, move, etc). Used to draw the ellipse on the bounding\+Rect(). \hypertarget{class_my_central_ellipse_item_a075835bf21a3d95317ece40e9ca3da7c}{}\index{My\+Central\+Ellipse\+Item@{My\+Central\+Ellipse\+Item}!shape@{shape}}
 \index{shape@{shape}!My\+Central\+Ellipse\+Item@{My\+Central\+Ellipse\+Item}}
 \subsubsection[{shape}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Painter\+Path My\+Central\+Ellipse\+Item\+::shape (
 \begin{DoxyParamCaption}

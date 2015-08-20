@@ -68,13 +68,16 @@ QRectF MyCentralEllipseItem::innerRect(){
 void MyCentralEllipseItem::mousePressEvent(QGraphicsSceneMouseEvent * event){
 	MyGraphicsView* myView = dynamic_cast<MyGraphicsView*>(scene()->views().at(0));
 	MainWindow* window = dynamic_cast<MainWindow*>(myView->parent());
-	//If the painterCursor is activated, then this item color should be changed. 
+	/*!
+	 *If the painterCursor is activated, then this item color should be changed.
+	 */
 	if(window->painterCursorActivated()){
 		MyDropGraphicsScene* scene = dynamic_cast<MyDropGraphicsScene*>(this->scene());
 		MyCentralGraphicsItem::pen->setColor(scene->painterColor());
 		this->update(boundingRect());
 	}
-	 /*This part is different from MyCentralGraphicsItem::mousePressEvent()
+	 /*!
+	 *This part is different from MyCentralGraphicsItem::mousePressEvent()
 	 *since I have to use the inner rectangle, instead of the bounding rectangle
 	 *check mousePressEvent() in MyCentralGraphicsItem.cpp to see the difference
 	 *in the following if statements
@@ -105,7 +108,7 @@ void MyCentralEllipseItem::hoverMoveEvent(QGraphicsSceneHoverEvent * event){
 	 /*same as MyCentralEllipseItem::mousePressEvent(), I have to
 	 *once again I have to  re-implement the if statemnts logic
 	 *since I use the bounding rectangle, instead of the inner rectangle
-	 *check mhoverMoveEvent() in MyCentralGraphicsItem.cpp to see the difference
+	 *check hoverMoveEvent() in MyCentralGraphicsItem.cpp to see the difference
 	 *in the following if statements
 	 */
 	if(verifyCorner(innerRect().topLeft(), event->pos())){
@@ -137,6 +140,9 @@ void MyCentralEllipseItem::hoverMoveEvent(QGraphicsSceneHoverEvent * event){
 			myView->setCursor(Qt::ArrowCursor);
 		}
 	}
+	/* MyCentralGraphicsItem::hoverMoveEvent() is not called here since it uses the
+	 * bounding rectangle, instead of the inner one
+	 */
 	QAbstractGraphicsShapeItem::hoverMoveEvent(event);
 }
 

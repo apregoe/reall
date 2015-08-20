@@ -17,6 +17,7 @@ public:
 private:
 	enum { Type = 1 };
 protected:
+	//! @copybrief MyCentralEllipseItem::mousePressEvent(QGraphicsSceneMouseEvent * event)
 	void mousePressEvent(QGraphicsSceneMouseEvent * event);
 };
 #endif

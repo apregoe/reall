@@ -6,8 +6,10 @@ class MyCentralEllipseItem : public MyCentralGraphicsItem{
 public:
 	MyCentralEllipseItem(const QRectF & rect, QGraphicsItem * parent = 0);
 	/*!
-	 *paint() is called whenever there is a change in this Item (resize, move, etc)
-	 *paint() is used to draw the ellipse on the boundingRect()
+	 * \brief Inherits from MyCentralGraphicsItem to draw the shape of the item.
+	 *
+	 * Called whenever there is a change in this Item (resize, move, etc).
+	 * Used to draw the ellipse on the boundingRect().
 	 */
 	void paint(QPainter * painter, const QStyleOptionGraphicsItem * option,
 		QWidget * widget = 0);
@@ -30,8 +32,13 @@ public:
 	 */
 	QRectF innerRect();
 private:
-	enum { Type = 4 }; /*! Enum type value 1 */
+	//! Enum type value 4
+	enum { Type = 4 };
 protected:
+	/*! \brief called whenever this item is clicked, inherits from MyCentralGraphicsItem
+	 *  \brief @param event used to get the position of the cursor when this function is called
+	 */
+
 	void mousePressEvent(QGraphicsSceneMouseEvent * event);
 
 	/*!
