@@ -3,7 +3,7 @@
 -	**Alberto Prego**
 
 ## To compile:
--	$make
+-	make
 
 ## To run:
 -	./reall
