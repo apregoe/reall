@@ -223,7 +223,7 @@ void MyDropGraphicsScene::reduceLineToBorders(QLineF & line, MyPointF * point, i
 		//line variables
 		double slope = ((line.y1()-line.y2())/(line.x1()-line.x2()));
 		p = line.p1();
-		double y_in = p.y() - (slope*p.x());
+		double y_in = (slope*p.x()) - p.y();
 
 		//solving it
 		double aCom, bCom, cCom;
@@ -240,64 +240,23 @@ void MyDropGraphicsScene::reduceLineToBorders(QLineF & line, MyPointF * point, i
 
 		//Final Root Values
 		float positive_rootY = slope*positive_root - y_in;
-		qDebug() << positive_root << positive_rootY<<endl;
+		float negative_rootY = slope*negative_root - y_in;
+//		qDebug() << positive_root << positive_rootY<<endl;
 
-		if(it == 0){line.setP1(QPointF(positive_root,positive_rootY));}
-		else{line.setP2(QPointF(positive_root,positive_rootY));}*/
-		
-		///////////////
-		/*
-		float R= 20;
-
-		float x0 = (item->mapToScene(item->shape().controlPointRect().center())).x();
-		float y0 = (item->mapToScene(item->shape().controlPointRect().center())).y();
-		if(line.x2() != line.x1()){
-		QPointF yaxis_intersection;
-		line.intersect( QLineF(QPointF(0, 10000), QPointF(0, -10000)), &yaxis_intersection);
-		//line->intersect( QLineF(scene()->boundingRect().topLeft(),
-		//		scene()->boundingRect().bottomRight()), &yaxis_intersection);
-
-		float a = (line.y2() - line.y1())/(line.x2() - line.x1());
-		float b = yaxis_intersection.y();
-
-		float A = 1 + a*a;
-		float B = 2*(a*b - a*y0 - x0);
-		float C = x0 * x0 + y0*y0 + b*b - 2*b*y0 - R*R;
-
-		float Q = B*B - 4*A*C;
-
-		if(Q > 0){  
-		    float s1 = (-1)*(B + sqrt(Q))/(2*A);
-		    float s2 = (sqrt(Q) - B)/(2*A);
-		    QPointF ps1(s1, a*s1 + b);
-		    QPointF ps2(s2, a*s2 + b);
-			//if(line.contains(ps1)){
-				if(it == 0){line.setP1(ps1);}
-				else{line.setP2(ps1);}
+		if(it == 0){
+			if((line.angle() > 90) && (line.angle() < 270)){
+				line.setP1(QPointF(negative_root,negative_rootY));
 			}else{
-				if(it == 0){line.setP1(ps2);}
-				else{line.setP2(ps2);}
-		}else{
-			float s0 = (-1)*B/(2A);
-			if(it == 0){line.setP1(QPointF(s0, as0 + b));}
-			else{line.setP2(QPointF(s0, as0 + b));}
-		}
-
-		QPainterPath ellipsePath = item->shape();
-		QPolygonF myPolygon;
-		myPolygon << line.p1() << line.p2();
-		QPainterPath linePath;
-		linePath.addPolygon(myPolygon);
-		addItem(new QGraphicsPolygonItem(myPolygon));
-
-		QPainterPath collidingPath = ellipsePath.intersected(linePath);
-		if(linePath.intersects(ellipsePath)){
-			qDebug() << "true";
+				line.setP1(QPointF(positive_root,positive_rootY));
+			}
 		}
 		else{
-			qDebug() << "false";
+			if((line.angle() > 90) && (line.angle() < 270)){
+				line.setP2(QPointF(positive_root,positive_rootY));
+			}else{
+				line.setP2(QPointF(positive_root,positive_rootY));
+			}
 		}
-		
 	}*/
 	reduceLineToBorders(line, point->closestPoint, ++it);
 }

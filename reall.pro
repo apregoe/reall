@@ -4,6 +4,7 @@
 
 TEMPLATE = app
 RESOURCES = resources.qrc
+CONFIG-=app_bundle
 TARGET = 
 DEPENDPATH += .
 INCLUDEPATH += .
